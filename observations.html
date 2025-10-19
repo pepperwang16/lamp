@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ECSE 424 Group J — Calm Tech Lamp | Observations and Proposal</title>
+  <meta name="description" content="Observations and Proposal for Calm-Tech Lamp" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b0d10; --text:#eaf1ff; --muted:#aab3c0; --line:#1e2430; --accent:#7cc4ff; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .container{max-width:1000px;margin:0 auto;padding:20px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0 16px;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#7cc4ff,#9effa6 60%);box-shadow:0 6px 18px rgba(124,196,255,.35)}
+    nav{display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:flex-end}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:10px;border:1px solid transparent}
+    nav a:hover{color:var(--text);border-color:#2b3345}
+    nav a.active{color:var(--text);border-color:#2b3345;background:rgba(255,255,255,.03)}
+
+    main{padding:24px 0}
+    h1{font-size:clamp(22px,3.4vw,34px);margin:10px 0 14px}
+    h2{font-size:20px;margin:24px 0 8px}
+    p{color:var(--muted);line-height:1.6}
+    ul{color:var(--muted);margin:8px 0 0 18px}
+    li{margin:6px 0}
+
+    .section{border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+    .imgbox{aspect-ratio:16/9;border:1px dashed #2c3546;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#95a4c8;font-size:14px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:860px){ .two-col{grid-template-columns:1fr} }
+
+    footer{margin-top:24px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+    .source{font-size:12px;color:#8ea1c9;margin-top:8px}
+  </style>
+</head>
+<body data-active="observations">
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        ECSE 424 Group J
+      </div>
+      <nav>
+        <a href="index.html#home">Home</a>
+        <a href="observations.html" data-key="observations" class="active">Observations and Proposal</a>
+        <a href="lofi.html" data-key="lofi">Low-Fidelity Prototype</a>
+        <a href="computer.html" data-key="computer">Computer Prototype</a>
+        <a href="feedback.html" data-key="feedback">Formative Feedback</a>
+        <a href="alpha.html" data-key="alpha">Alpha System</a>
+        <a href="beta.html" data-key="beta">Beta System</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Observations and Proposal</h1>
+
+      <!-- 1. User Observations -->
+      <section class="section">
+        <h2>User Observations</h2>
+
+        <h3>Student (Library)</h3>
+        <ul>
+          <li>Checks phone regularly, often around :00 or :30; glances at phone then quickly packs up and leaves.</li>
+          <li>Notices peers carrying umbrellas → checks own phone; asks “Is it raining? Did you bring an umbrella?”</li>
+          <li>Opens timer/calendar app on laptop or tablet; checks phone before leaving/entering the library.</li>
+          <li>Remains seated without stretching or drinking water; hunched forward while studying.</li>
+        </ul>
+
+        <h3>Researcher (Lab)</h3>
+        <ul>
+          <li>Glances at laptop clock or calendar to gauge elapsed time; briefly unlocks phone to check notifications.</li>
+          <li>Hesitates before starting work; reorganizes notes/tabs, then enters deep focus for long stretches.</li>
+          <li>Hunched posture; frustrated when interrupted and needs time to regain flow; walks out still thinking/making notes.</li>
+        </ul>
+
+        <h3>Worker (Office)</h3>
+        <ul>
+          <li>Glances at phone and leaves in a rush; reacts to coworkers with umbrellas by checking phone.</li>
+          <li>Opens weather tab; looks out the window; works long periods without moving.</li>
+          <li>Remarks like “Oh no, it’s raining already—I didn’t bring an umbrella”; checks phone at entry/exit; leans forward over keyboard.</li>
+        </ul>
+      </section>
+
+      <!-- 2. Problems & Opportunity -->
+      <section class="section">
+        <h2>Identified Problems</h2>
+        <ol>
+          <li><strong>Reliance on phones for time & weather</strong> → distractions from unrelated notifications; frequent checks at :00/:30.</li>
+          <li><strong>Sudden & unprepared departures</strong> → rushing out and forgetting items; weather preparedness is reactive.</li>
+          <li><strong>Weather awareness via indirect/social cues</strong> → asking peers / looking outside instead of consistent signals.</li>
+          <li><strong>Neglect of physical well-being</strong> → extended sitting without stretching/hydrating; fatigue builds up.</li>
+        </ol>
+
+        <h2>Opportunity for a Calm, Ambient System</h2>
+        <ul>
+          <li>Provide <em>glanceable</em> cues for time & weather to reduce phone-checking.</li>
+          <li>Support smooth, prepared transitions between spaces (leave on time, dress for weather).</li>
+          <li>Encourage healthy micro-breaks (stretch/hydrate) via gentle, non-intrusive light signals.</li>
+        </ul>
+      </section>
+
+      <!-- 3. Illustrations placeholders -->
+      <section class="section">
+        <h2>Supporting Illustrations (placeholders)</h2>
+        <div class="two-col">
+          <div class="imgbox">Figure 1 placeholder — student notices umbrellas → checks phone</div>
+          <div class="imgbox">Figure 2 placeholder — student glances at phone then packs to leave</div>
+          <div class="imgbox">Figure 3 placeholder — researchers sit hunched without breaks</div>
+          <div class="imgbox">Figure 4 placeholder — researcher checks phone before leaving</div>
+          <div class="imgbox">Figure 5 placeholder — office worker reacts to umbrellas, checks phone</div>
+          <div class="imgbox">Figure 6 placeholder — workers remain at desks without moving</div>
+        </div>
+      </section>
+
+      <!-- 4. Personas -->
+      <section class="section">
+        <h2>Personas & Scenarios</h2>
+
+        <h3>Persona 1 — The Student (Sarah Kim, 21)</h3>
+        <p><strong>Goals:</strong> Deep focus without disruptive alarms; remember to hydrate/stretch; be weather-prepared when leaving. <br/>
+           <strong>Frustrations:</strong> Loud timers in quiet spaces; forgets breaks; gets caught by sudden weather. <br/>
+           <strong>How the Lamp helps:</strong> Ambient focus/break cues; gradient color shows upcoming weather; gentle reminders for micro-breaks.</p>
+        <ul>
+          <li><em>Scenario 1a — Study & Breaks:</em> Soft glow shift indicates break time (e.g., 40/10 cycle) without startling peers.</li>
+          <li><em>Scenario 1b — Weather Awareness:</em> Gradient reflects near-term forecast so she packs an umbrella/jacket in advance.</li>
+        </ul>
+
+        <h3>Persona 2 — The Researcher (Dr. Amir Hassan, 34)</h3>
+        <p><strong>Goals:</strong> Maintain concentration; respect quiet lab; avoid fatigue; prepare for meetings/commute with advance weather cues. <br/>
+           <strong>Frustrations:</strong> Phone alerts break flow; skips breaks; misses weather changes before events. <br/>
+           <strong>How the Lamp helps:</strong> Silent light cues manage focus/breaks; posture/hydration nudges; color/gradient communicates forecast.</p>
+        <ul>
+          <li><em>Scenario 2a — Focus & Breaks:</em> Gradual light change reminds him to stretch; optional silent meeting alarm.</li>
+          <li><em>Scenario 2b — Weather Awareness:</em> Subtle palette shift signals rain/temperature changes for better planning.</li>
+        </ul>
+
+        <h3>Persona 3 — The Worker (Alex Chen, 28)</h3>
+        <p><strong>Goals:</strong> Leave home/work prepared for rain/snow; monitor weather without distractions; sustain productivity with gentle breaks. <br/>
+           <strong>Frustrations:</strong> Forgets checks and gets caught by rain; phone apps derail focus; intrusive alerts. <br/>
+           <strong>How the Lamp helps:</strong> Ambient weather awareness; light-based break nudges; unobtrusive planning for commute/lunch.</p>
+        <ul>
+          <li><em>Scenario 3a — Morning Preparation:</em> Quick read of current + next hours to dress appropriately before rushing out.</li>
+          <li><em>Scenario 3b — During Workday:</em> Cooler hue signals incoming rain → adjust lunch/leave time to avoid bad weather.</li>
+        </ul>
+      </section>
+
+      <!-- 5. Related Products -->
+      <section class="section">
+        <h2>Related Products (Comparative Notes)</h2>
+        <p><strong>Forest (Pomodoro)</strong> — effective but phone-centric; screens/numerical countdowns/sounds can raise anxiety and distract in quiet spaces.</p>
+        <p><strong>Google Nest Hub</strong> — requires explicit interaction; screen/voice feedback can be disruptive; information density exceeds calm-tech needs.</p>
+        <p><strong>Why our Lamp?</strong> Removes screens & numbers; relies on gentle ambient transitions, better for libraries/labs and sustained focus.</p>
+      </section>
+
+      <!-- 6. Feasibility summary -->
+      <section class="section">
+        <h2>Feasibility (Summary)</h2>
+        <ul>
+          <li><strong>Hardware:</strong> ESP32/Raspberry Pi + addressable RGB LEDs + diffuser housing.</li>
+          <li><strong>Software:</strong> Weather API → color mapping; timer logic on microcontroller; lightweight local web UI.</li>
+          <li><strong>Team:</strong> Hardware prototyping, firmware & API integration, UX research and evaluation coverage.</li>
+          <li><strong>Effort:</strong> ~22–26 hours per member (assembly, firmware, API, web UI, user testing, documentation).</li>
+        </ul>
+      </section>
+
+      <p class="source">Source: ECSE424_GroupJ_Proposal (Observations & Proposal). :contentReference[oaicite:1]{index=1}</p>
+    </main>
+
+    <footer>
+      © <span id="yr"></span> ECSE 424 Group J • Calm Tech Lamp
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    // 高亮当前导航（备用；这里我们已在 nav 上直接加了 active）
+    const active = document.body.getAttribute('data-active');
+    if (active) {
+      const link = document.querySelector(`nav a[data-key="${active}"]`);
+      if (link) link.classList.add('active');
+    }
+  </script>
+</body>
+</html>
