@@ -24,17 +24,16 @@
     main{padding:24px 0}
     h1{font-size:clamp(22px,3.4vw,34px);margin:10px 0 14px}
     h2{font-size:20px;margin:24px 0 8px}
-    p{color:var(--muted);line-height:1.6}
-    ul{color:var(--muted);margin:8px 0 0 18px}
+    p, li{color:var(--muted);line-height:1.6}
+    ul, ol{margin:8px 0 0 18px}
     li{margin:6px 0}
 
     .section{border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
-    .imgbox{aspect-ratio:16/9;border:1px dashed #2c3546;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#95a4c8;font-size:14px}
+    .imgbox{aspect-ratio:16/9;border:1px dashed #2c3546;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#95a4c8;font-size:14px;text-align:center;padding:8px}
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     @media (max-width:860px){ .two-col{grid-template-columns:1fr} }
 
     footer{margin-top:24px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-    .source{font-size:12px;color:#8ea1c9;margin-top:8px}
   </style>
 </head>
 <body data-active="observations">
@@ -58,116 +57,315 @@
     <main>
       <h1>Observations and Proposal</h1>
 
-      <!-- 1. User Observations -->
+      <!-- User Observations -->
       <section class="section">
         <h2>User Observations</h2>
 
         <h3>Student (Library)</h3>
         <ul>
-          <li>Checks phone regularly, often around :00 or :30; glances at phone then quickly packs up and leaves.</li>
-          <li>Notices peers carrying umbrellas → checks own phone; asks “Is it raining? Did you bring an umbrella?”</li>
-          <li>Opens timer/calendar app on laptop or tablet; checks phone before leaving/entering the library.</li>
-          <li>Remains seated without stretching or drinking water; hunched forward while studying.</li>
+          <li>Checks phone regularly, often around :00 or :30.</li>
+          <li>Glances at phone, then suddenly packs up belongings and leaves the library.</li>
+          <li>Notices other students bringing umbrellas, then checks own phone.</li>
+          <li>Asks peers quietly, “Is it raining? Did you bring an umbrella?”</li>
+          <li>Opens timer/calendar app on laptop or tablet.</li>
+          <li>Checks phone before leaving or entering the library.</li>
+          <li>Remains seated at the desk without stretching or drinking water.</li>
+          <li>Sits with body bent forward, focused on studying.</li>
         </ul>
 
         <h3>Researcher (Lab)</h3>
         <ul>
-          <li>Glances at laptop clock or calendar to gauge elapsed time; briefly unlocks phone to check notifications.</li>
-          <li>Hesitates before starting work; reorganizes notes/tabs, then enters deep focus for long stretches.</li>
-          <li>Hunched posture; frustrated when interrupted and needs time to regain flow; walks out still thinking/making notes.</li>
+          <li>Glances at the laptop clock or calendar app while working, seemingly checking how much time has passed.</li>
+          <li>Briefly unlocks their phone, checks notifications, then places it face-down again.</li>
+          <li>Hesitates before starting work, often reorganizing notes or tabs before settling into focus.</li>
+          <li>Once engaged, sits for long stretches without standing, stretching, or hydrating.</li>
+          <li>Keeps a deeply focused posture—shoulders hunched, eyes fixed on the screen.</li>
+          <li>Appears frustrated when interrupted mid-thought; takes time to regain flow.</li>
+          <li>Walks out still thinking about research tasks, sometimes making notes or voice memos on the way.</li>
         </ul>
 
         <h3>Worker (Office)</h3>
         <ul>
-          <li>Glances at phone and leaves in a rush; reacts to coworkers with umbrellas by checking phone.</li>
-          <li>Opens weather tab; looks out the window; works long periods without moving.</li>
-          <li>Remarks like “Oh no, it’s raining already—I didn’t bring an umbrella”; checks phone at entry/exit; leans forward over keyboard.</li>
+          <li>Leaves desk quickly when realizing time, sometimes after glancing at phone.</li>
+          <li>Sees coworker with an umbrella, then immediately checks phone.</li>
+          <li>Opens weather tab on computer during the workday.</li>
+          <li>Glances at window multiple times while working.</li>
+          <li>Works at desk for long periods without moving.</li>
+          <li>Says aloud, “Oh no, it’s raining already—I didn’t bring an umbrella.”</li>
+          <li>Checks phone before leaving and when entering the office.</li>
+          <li>Leans forward over keyboard and screen for long periods.</li>
         </ul>
       </section>
 
-      <!-- 2. Problems & Opportunity -->
+      <!-- Identifying the problem -->
       <section class="section">
-        <h2>Identified Problems</h2>
+        <h2>Identifying the problem</h2>
+
+        <h3>Interaction problems</h3>
         <ol>
-          <li><strong>Reliance on phones for time & weather</strong> → distractions from unrelated notifications; frequent checks at :00/:30.</li>
-          <li><strong>Sudden & unprepared departures</strong> → rushing out and forgetting items; weather preparedness is reactive.</li>
-          <li><strong>Weather awareness via indirect/social cues</strong> → asking peers / looking outside instead of consistent signals.</li>
-          <li><strong>Neglect of physical well-being</strong> → extended sitting without stretching/hydrating; fatigue builds up.</li>
+          <li><strong>Reliance on Phones for Time and Weather</strong>
+            <ul>
+              <li>All three groups consistently checked their phones before leaving or entering their workspace to confirm the time and weather.</li>
+              <li>Many also glanced at their phones during study/work sessions (often around :00 or :30). This created unnecessary distraction and often led to unrelated notifications drawing their attention away from the task.</li>
+            </ul>
+          </li>
+          <li><strong>Sudden and Unprepared Departures</strong>
+            <ul>
+              <li>Students and workers frequently checked their phones and then rushed to leave, sometimes forgetting items or leaving unprepared for the weather..</li>
+              <li>Weather awareness typically came reactively—noticing others' umbrellas or coats—rather than from proactive, calm cues.</li>
+            </ul>
+          </li>
+          <li><strong>Weather Awareness Through Indirect or Social Cues</strong>
+            <ul>
+              <li>Instead of using a reliable system, users looked out windows or asked peers questions like "Is it raining? Did you bring an umbrella?"</li>
+              <li>This behavior indicates a lack of dependable weather preparedness during transitions between spaces.</li>
+            </ul>
+          </li>
+          <li><strong>Neglect of Physical Well-being During Long Sessions</strong>
+            <ul>
+              <li>- Both students and researchers sat for extended periods, often hunched forward, without stretching or hydrating.</li>
+              <li>Workers similarly remained at their desks without movement, responding only to external interruptions. This suggests an absence of gentle reminders for breaks and self-care.</li>
+            </ul>
+          </li>
         </ol>
 
-        <h2>Opportunity for a Calm, Ambient System</h2>
+        <h3>Opportunity for Improved Design</h3>
         <ul>
-          <li>Provide <em>glanceable</em> cues for time & weather to reduce phone-checking.</li>
-          <li>Support smooth, prepared transitions between spaces (leave on time, dress for weather).</li>
-          <li>Encourage healthy micro-breaks (stretch/hydrate) via gentle, non-intrusive light signals.</li>
+          <li>Provides glanceable cues for both time and weather, eliminating distracting phone checks.</li>
+          <li>Supports smooth, prepared transitions between spaces, helping users leave on time and with appropriate weather forecasting.</li>
+          <li>Encourages healthy micro-breaks (stretching, hydrating) through non-intrusive light signals, reducing fatigue without disturbing others.</li>
         </ul>
       </section>
 
-      <!-- 3. Illustrations placeholders -->
+      <!-- Supporting Materials (with figure captions exactly as in PDF) -->
       <section class="section">
-        <h2>Supporting Illustrations (placeholders)</h2>
+        <h2>Supporting Materials</h2>
+        <p>Since we did not capture photographs or video clips during the initial observation phase, we created a series of illustrations using ChatGPT to represent the interaction problems and opportunities for improved design. These illustrations are based directly on our observations of students, researchers, and workers in their respective environments.</p>
+
         <div class="two-col">
-          <div class="imgbox">Figure 1 placeholder — student notices umbrellas → checks phone</div>
-          <div class="imgbox">Figure 2 placeholder — student glances at phone then packs to leave</div>
-          <div class="imgbox">Figure 3 placeholder — researchers sit hunched without breaks</div>
-          <div class="imgbox">Figure 4 placeholder — researcher checks phone before leaving</div>
-          <div class="imgbox">Figure 5 placeholder — office worker reacts to umbrellas, checks phone</div>
-          <div class="imgbox">Figure 6 placeholder — workers remain at desks without moving</div>
+          <div>
+            <div class="imgbox">Figure 1 image placeholder</div>
+            <p><em>Figure 1. A student notices peers carrying umbrellas and checks their phone.</em></p>
+          </div>
+          <div>
+            <div class="imgbox">Figure 2 image placeholder</div>
+            <p><em>Figure 2. A student glances at their phone while studying, then suddenly packs up their belongings to leave the library.</em></p>
+          </div>
+          <div>
+            <div class="imgbox">Figure 3 image placeholder</div>
+            <p><em>Figure 3. Researchers sit hunched over a laptop for long periods, not stretching or hydrating.</em></p>
+          </div>
+          <div>
+            <div class="imgbox">Figure 4 image placeholder</div>
+            <p><em>Figure 4. Before leaving the lab, the researcher checks their phone</em></p>
+          </div>
+          <div>
+            <div class="imgbox">Figure 5 image placeholder</div>
+            <p><em>Figure 5. An office worker reacts to colleagues entering with umbrellas by checking their phone. A colleague glances outside, asking, “Is it raining?”</em></p>
+          </div>
+          <div>
+            <div class="imgbox">Figure 6 image placeholder</div>
+            <p><em>Figure 6. Workers remain at their desks without moving, focused on screens, showing the lack of reminders for breaks.</em></p>
+          </div>
         </div>
       </section>
 
-      <!-- 4. Personas -->
+      <!-- Personas and scenarios -->
       <section class="section">
-        <h2>Personas & Scenarios</h2>
+        <h2>Persona 1 – The Student</h2>
+        <p><strong>Name:</strong> Sarah Kim<br/>
+           <strong>Age:</strong> 21<br/>
+           <strong>Occupation:</strong> Undergraduate Student (Biology major)<br/>
+           <strong>Context:</strong> Studies long hours in the library, often in shared spaces with other students.</p>
 
-        <h3>Persona 1 — The Student (Sarah Kim, 21)</h3>
-        <p><strong>Goals:</strong> Deep focus without disruptive alarms; remember to hydrate/stretch; be weather-prepared when leaving. <br/>
-           <strong>Frustrations:</strong> Loud timers in quiet spaces; forgets breaks; gets caught by sudden weather. <br/>
-           <strong>How the Lamp helps:</strong> Ambient focus/break cues; gradient color shows upcoming weather; gentle reminders for micro-breaks.</p>
+        <p><strong>Goals:</strong></p>
         <ul>
-          <li><em>Scenario 1a — Study & Breaks:</em> Soft glow shift indicates break time (e.g., 40/10 cycle) without startling peers.</li>
-          <li><em>Scenario 1b — Weather Awareness:</em> Gradient reflects near-term forecast so she packs an umbrella/jacket in advance.</li>
+          <li>Stay focused during study sessions without being startled by alarms.</li>
+          <li>Remember to hydrate and take breaks to avoid fatigue.</li>
+          <li>Stay aware of upcoming weather changes while studying, so she’s prepared before leaving home or school (e.g., for class, errands, or heading back to the dorm/home)</li>
         </ul>
 
-        <h3>Persona 2 — The Researcher (Dr. Amir Hassan, 34)</h3>
-        <p><strong>Goals:</strong> Maintain concentration; respect quiet lab; avoid fatigue; prepare for meetings/commute with advance weather cues. <br/>
-           <strong>Frustrations:</strong> Phone alerts break flow; skips breaks; misses weather changes before events. <br/>
-           <strong>How the Lamp helps:</strong> Silent light cues manage focus/breaks; posture/hydration nudges; color/gradient communicates forecast.</p>
+        <p><strong>Frustrations:</strong></p>
         <ul>
-          <li><em>Scenario 2a — Focus & Breaks:</em> Gradual light change reminds him to stretch; optional silent meeting alarm.</li>
-          <li><em>Scenario 2b — Weather Awareness:</em> Subtle palette shift signals rain/temperature changes for better planning.</li>
+          <li>Alarms/timers make her anxious and disturb others in quiet study spaces.</li>
+          <li>She forgets to stretch or drink water when deeply focused.</li>
+          <li>She often leaves unprepared for sudden weather (e.g., without a jacket or umbrella).</li>
         </ul>
 
-        <h3>Persona 3 — The Worker (Alex Chen, 28)</h3>
-        <p><strong>Goals:</strong> Leave home/work prepared for rain/snow; monitor weather without distractions; sustain productivity with gentle breaks. <br/>
-           <strong>Frustrations:</strong> Forgets checks and gets caught by rain; phone apps derail focus; intrusive alerts. <br/>
-           <strong>How the Lamp helps:</strong> Ambient weather awareness; light-based break nudges; unobtrusive planning for commute/lunch.</p>
+        <p><strong>How the Calm Companion System helps:</strong></p>
         <ul>
-          <li><em>Scenario 3a — Morning Preparation:</em> Quick read of current + next hours to dress appropriately before rushing out.</li>
-          <li><em>Scenario 3b — During Workday:</em> Cooler hue signals incoming rain → adjust lunch/leave time to avoid bad weather.</li>
+          <li>Provides calm, ambient cues for focus timing and shows upcoming weather changes without the need for phone checks.</li>
+          <li>The lamp’s color gradient reflects upcoming weather, so she can prepare before heading out—whether for class, errands, or commuting home.</li>
+          <li>Subtle light-based break reminders (gentle pulse or color shift) prompt Sarah to stretch or hydrate during long study sessions.</li>
         </ul>
+
+        <p><strong>User case scenarios:</strong></p>
+        <p><em>Scenario 1a – Study and Breaks</em><br/>
+        Sarah is in the library, preparing for an upcoming exam. She sets the Lamp to study mode. Instead of hearing a loud alarm, she notices the lamp softly shifting its glow, signalling it is time to take a break. She can customise the break cycle (for example, 40 minutes of work followed by a 10-minute rest). This gentle cue allows her to stretch and drink water without disturbing her peers. When she needs a reminder to leave for her lecture, she programs the lamp to flash or change colour at the set time.</p>
+
+        <p><em>Scenario 1b – Weather Awareness</em><br/>
+        Beyond time management, the Lamp provides Sarah with subtle weather information. Its gradual color gradient shows both current conditions and the forecast for the next few hours. Even when it looks sunny as she leaves her dorm, the lamp alerts her to expected rain later, ensuring she brings an umbrella and avoids being caught unprepared.</p>
       </section>
 
-      <!-- 5. Related Products -->
       <section class="section">
-        <h2>Related Products (Comparative Notes)</h2>
-        <p><strong>Forest (Pomodoro)</strong> — effective but phone-centric; screens/numerical countdowns/sounds can raise anxiety and distract in quiet spaces.</p>
-        <p><strong>Google Nest Hub</strong> — requires explicit interaction; screen/voice feedback can be disruptive; information density exceeds calm-tech needs.</p>
-        <p><strong>Why our Lamp?</strong> Removes screens & numbers; relies on gentle ambient transitions, better for libraries/labs and sustained focus.</p>
-      </section>
+        <h2>Persona 2 – The Researcher</h2>
+        <p><strong>Name:</strong> Dr. Amir Hassan<br/>
+           <strong>Age:</strong> 34<br/>
+           <strong>Occupation:</strong> Postdoctoral Researcher (Physics lab)<br/>
+           <strong>Context:</strong> Works in shared labs and offices, doing deep-focus tasks like coding, writing, or experiments.</p>
 
-      <!-- 6. Feasibility summary -->
-      <section class="section">
-        <h2>Feasibility (Summary)</h2>
+        <p><strong>Goals:</strong></p>
         <ul>
-          <li><strong>Hardware:</strong> ESP32/Raspberry Pi + addressable RGB LEDs + diffuser housing.</li>
-          <li><strong>Software:</strong> Weather API → color mapping; timer logic on microcontroller; lightweight local web UI.</li>
-          <li><strong>Team:</strong> Hardware prototyping, firmware & API integration, UX research and evaluation coverage.</li>
-          <li><strong>Effort:</strong> ~22–26 hours per member (assembly, firmware, API, web UI, user testing, documentation).</li>
+          <li>Maintain concentration for long research sessions.</li>
+          <li>Respect quiet lab environments (no disruptive alarms).</li>
+          <li>Avoid fatigue by taking short, restorative breaks.</li>
+          <li>Stay prepared for campus events, meetings, or commuting home by noticing weather changes in advance.</li>
         </ul>
+
+        <p><strong>Frustrations:</strong></p>
+        <ul>
+          <li>Phone timers or alarms interrupt his thought process and distract colleagues.</li>
+          <li>Skips break, leading to posture issues and fatigue.</li>
+          <li>Doesn’t always notice when weather changes before heading to a seminar or bus stop.</li>
+        </ul>
+
+        <p><strong>How the Calm Companion System helps:</strong></p>
+        <ul>
+          <li>Provides silent light cues that help him manage focus and break cycles without disturbing colleagues.</li>
+          <li>Subtle ambient reminders encourage Amir to stretch, hydrate, or adjust posture during long work sessions.</li>
+          <li>The lamp’s color and gradient display show both current and forecasted weather, so he’s already prepared before leaving for events or his commute.</li>
+        </ul>
+
+        <p><strong>User case scenarios:</strong></p>
+        <p><em>Scenario 2a – Focus and Breaks</em><br/>
+        Amir spends hours running simulations in his lab. Deeply immersed in his work, he frequently forgets to move or take breaks. With the lamp on his desk, the ambient light gradually shifts, reminding him to pause and stretch without disrupting the quiet lab environment. He can also use the lamp as a silent alarm for upcoming meetings or seminars.</p>
+
+         <p><em>Scenario 2b – Weather Awareness</em><br/>
+        In addition to managing his focus, Amir also benefits from the lamp’s colour gradient, which subtly reflects weather changes. By glancing at the lamp, he can anticipate shifts in temperature or rain and decide whether to bring a jacket before leaving the lab for a seminar or his commute home.</p>
       </section>
 
-      <p class="source">Source: ECSE424_GroupJ_Proposal (Observations & Proposal). :contentReference[oaicite:1]{index=1}</p>
+      <section class="section">
+        <h2>Persona 3 – The Worker</h2>
+        <p><strong>Name:</strong> Alex Chen<br/>
+           <strong>Age:</strong> 28<br/>
+           <strong>Occupation:</strong> Marketing Coordinator<br/>
+           <strong>Context:</strong> Commutes downtown daily, often rushing in the morning; spends long hours at his office desk.</p>
+
+        <p><strong>Goals:</strong></p>
+        <ul>
+          <li>Leave home prepared for rain/snow.</li>
+          <li>Monitor weather shifts during the day (for lunch, meeting, or the commute) without distractions.</li>
+          <li>Stay productive and focused without constantly checking his phone.</li>
+          <li>Maintain energy during long desk sessions with subtle reminders to take breaks.</li>
+        </ul>
+
+        <p><strong>Frustrations:</strong></p>
+        <ul>
+          <li>Forgets to check the weather before leaving and often gets caught in rain.</li>
+          <li>Weather apps pull him into unrelated notifications when checked at work.</li>
+          <li>Dislikes intrusive phone alerts while concentrating.</li>
+          <li>Tends to skip stretching or hydration when absorbed in tasks.</li>
+        </ul>
+
+        <p><strong>How the Calm Companion System helps:</strong></p>
+        <ul>
+          <li>Ambient light communicates current and forecasted weather conditions, helping Alex plan ahead without reaching for his phone.</li>
+          <li>Subtle light-based reminders encourage him to stretch or drink water, supporting health and productivity during long desk hours.</li>
+          <li>The lamp provides calm, unobtrusive awareness—keeping him prepared for his commute or lunch breaks without disrupting his focus.</li>
+        </ul>
+
+        <p><strong>User case scenarios:</strong></p>
+        <p><em>Scenario 3a – Morning Preparation</em><br/>
+        Alex rushes out of his apartment on a Monday morning, already running late. With no time to check his phone, he relies on the Lamp to quickly see both the current temperature and the forecast for the coming hours. This allows him to decide whether to wear lighter or heavier clothing before heading out. Since Alex usually spends the entire day at the office, he configures the lamp to display weather conditions several hours in advance, helping him prepare appropriately for his commute home.</p>
+
+        <p><em>Scenario 3b – During the Workday</em><br/>
+        At his desk, Alex keeps the Lamp within view. Without opening distracting apps on his phone, he notices the lamp slowly shift to a cooler shade, signalling that rain is approaching. This subtle cue helps him adjust his schedule—for example, choosing to take lunch earlier or leaving work a bit sooner—so he avoids being caught in bad weather during his commute.</p>
+      </section>
+
+      <!-- Related Products -->
+      <section class="section">
+        <h2>Related Products</h2>
+        <p><strong>Forest.</strong> This is a popular mobile Pomodoro timer app that encourages users to stay focused by “growing” virtual trees during work sessions. While this app gamifies focus in a positive way, it heavily relies on the phone screen. This dependency creates two limitations. First, users are still exposed to the very notifications and distractions they are trying to avoid, since opening the phone for the timer can easily lead to checking messages or social media. Second, Forest still displays numerical countdowns and sends audible notifications, which can heighten anxiety and disrupt the quiet of shared environments like libraries or labs. From the perspective of calm technology, Forest remains too “foregrounded” and attention-demanding rather than fading into the periphery.</p>
+
+        <p><em>Comparison:</em> The Calm Companion Lamp offers a calmer and less distracting experience for users like Sarah (the student) and Amir (the researcher). Forest relies on phone screens, numerical countdowns, and sound notifications, all of which can create anxiety or draw attention away from study tasks. By contrast, our lamp eliminates screens and numbers entirely, using only subtle light transitions to guide focus and break cycles. This makes it more suitable for quiet, shared environments, where loud alarms or phone-checking would disturb others.</p>
+
+        <p><strong>Google Nest Hub.</strong> This a smart display that integrates reminders, timers, and weather forecasts. While it can provide information about the day’s weather and set countdowns, it has several shortcomings in the contexts we focus on. The device primarily relies on active user engagement: the user must ask Google Assistant for weather updates or timers, which interrupts concentration and demands explicit interaction. Moreover, its use of screen-based and voice-based feedback can be disruptive in shared or quiet spaces, making it unsuitable for environments like libraries or labs. Moreover, the screen’s visual presentation often overloads users with details rather than providing the simple, ambient cues that calm technology requires.</p>
+
+        <p><em>Comparison:</em> The Calm Companion Lamp offers a calmer and less distracting experience for users like Sarah (the student) and Amir (the researcher). Forest relies on phone screens, numerical countdowns, and sound notifications, all of which can create anxiety or draw attention away from study tasks. By contrast, our lamp eliminates screens and numbers entirely, using only subtle light transitions to guide focus and break cycles. This makes it more suitable for quiet, shared environments, where loud alarms or phone-checking would disturb others.</p>
+      </section>
+
+
+      <!-- Architectural Diagram -->
+      <section class="section">
+        <h2>Architectural Diagram</h2>
+        <div class="imgbox">Architectural diagram image placeholder</div>
+      </section>
+
+      <!-- Feasibility & Team & Time Effort -->
+      <section class="section">
+        <h2>Justifying Feasibility</h2>
+        <p>We are confident that the WeatherFocus Lamp can be built and evaluated by the end of the semester. The system uses widely available hardware and lightweight software, and the workload fits within the guideline of 20–30 hours per group member.</p>
+
+        <h3>Hardware Feasibility</h3>
+        <ul>
+          <li>Core components: ESP32 or Raspberry Pi microcontroller with Wi-Fi, an addressable RGB LED strip, and a simple lamp casing/diffuser.</li>
+          <li>Practicality: All components are inexpensive, accessible, and supported by extensive online documentation. Assembly involves straightforward wiring and housing design. With prior experience in Raspberry Pi hardware projects, our team can complete this step efficiently.</li>
+        </ul>
+
+        <h3>Software Feasibility</h3>
+        <ul>
+          <li>Weather API integration: The microcontroller will retrieve local weather data from an API such as OpenWeatherMap. Parsing JSON data and mapping it to LED colors (e.g., sunny = warm yellow, rainy = blue) is a well-documented process.</li>
+          <li>Focus timer logic: Timer functionality will run on the microcontroller firmware. During focus sessions, the lamp will hold a steady color; at the end, it will gently flash to signal a break.</li>
+          <li>Mobile interaction: Rather than building a full mobile app, we will host a lightweight web interface on the ESP32/Raspberry Pi. Users can connect via Wi-Fi to set timers and allow location access for weather services. This reduces complexity while maintaining usability.</li>
+        </ul>
+
+        <h3>Team Skills and Preparedness</h3>
+        <ul>
+          <li>Jiayu Geng: Experienced in hardware architecture and prototyping (PCB, 3D printing, enclosure), in developing firmware for the lighting/rendering pipeline; accountable for hardware circuit design and embedded code development.</li>
+          <li>Woojin Jang: Software engineering major with hands-on Raspberry Pi experience; responsible for firmware development, system integration, and API communication.</li>
+          <li>Pepper Wang: Strong background in User Experience and HCI research; responsible for prototyping, usability study design, and qualitative/quantitative evaluation. Also experienced in web development, supporting the mobile-friendly control interface.</li>
+        </ul>
+
+        <h3>Time Effort Estimate</h3>
+        <ul>
+          <li>Hardware assembly & casing: 8–10 hours</li>
+          <li>Firmware development (timers, LED transitions): 8–10 hours</li>
+          <li>Weather API integration: 4–6 hours</li>
+          <li>Web interface for mobile control: 6–8 hours</li>
+          <li>User testing and documentation: 6–8 hours</li>
+        </ul>
+
+        <p>This results in ~22–26 hours per member, well within the expected 20–30 hour range.</p>
+
+        <h3>Conclusion</h3>
+        <p>The WeatherFocus Lamp is highly feasible because it leverages accessible hardware, simple software building blocks, and the team’s complementary expertise. With Raspberry Pi and embedded programming experience, web development and data analysis skills, and strong UX/HCI design capabilities, our group is well prepared to deliver both a working prototype and meaningful user evaluation by the end of the semester.</p>
+      </section>
+
+      <!-- REB form -->
+      <section class="section">
+        <h2>REB form</h2>
+        <p><strong>Group/student names:</strong><br/>
+        Group J: Jiayu Geng, Woojin Jang, Pepper Wang</p>
+
+        <p><strong>Title of Project:</strong><br/>
+        Calm companion lamp</p>
+
+        <p><strong>Project/Study Description (2-3 sentences):</strong><br/>
+        This project explores a calm technology lamp designed to support focus, healthy break-taking, and weather preparedness. The lamp uses ambient light to indicate focus/break cycles, provides gentle reminders for hydration and stretching, and displays subtle weather cues (e.g., color changes or gradients) to help users anticipate changes without needing disruptive alarms or phone checks. Usability testing and interviews will evaluate how the lamp supports concentration and daily routines in shared study or work environments.</p>
+
+        <p><strong>Number and type of participants (gender, age range, other particulars such as athletes, farmers, musicians, etc.) :</strong><br/>
+        We plan to recruit 8–12 participants for this study. All participants will be 18 years or older, and we will ensure demographic diversity including age, gender, education status and so on. Participants must be comfortable communicating in English and should have regular experience with long periods of focused desk work, such as students, researchers, or office workers.</p>
+
+        <p><strong>How and from where are they recruited:</strong><br/>
+        Recruitment will be conducted by spreading a call for participation through campus channels, community postings, and social media. In addition, snowball sampling will be encouraged, allowing participants to refer others who meet the study criteria.</p>
+
+        <p><strong>What risk could this study entail for participants?:</strong><br/>
+        We do not foresee any harm associated with this project. The risks associated with this research are minimal and equivalent to what individuals would experience in their daily lives. However, some unpleasant emotions may arise when discussing the experience of high-intensity work.</p>
+
+        <p><strong>How can these risks be mitigated?:</strong><br/>
+        To address potential negative emotions, we will inform participants that they are free to take breaks as needed or to drop out of the study at any time without penalty. We also inform them that we can adapt the timing, location and delivery of the study to accommodate their needs.</p>
+      </section>
+
     </main>
 
     <footer>
@@ -177,7 +375,6 @@
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
-    // 高亮当前导航（备用；这里我们已在 nav 上直接加了 active）
     const active = document.body.getAttribute('data-active');
     if (active) {
       const link = document.querySelector(`nav a[data-key="${active}"]`);
