@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ECSE 424 Group J — Calm Tech Lamp | Low-Fidelity Prototype</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0d10;--text:#eaf1ff;--muted:#aab3c0;--line:#1e2430;--accent:#7cc4ff;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .container{max-width:1000px;margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0 16px;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#7cc4ff,#9effa6 60%);box-shadow:0 6px 18px rgba(124,196,255,.35)}
+    nav{display:flex;flex-wrap:wrap;gap:10px 18px}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:6px 10px;border-radius:10px;border:1px solid transparent}
+    nav a:hover{color:var(--text);border-color:#2b3345}
+    nav a.active{color:var(--text);border-color:#2b3345;background:rgba(255,255,255,.03)}
+    main{padding:24px 0}
+    h1{font-size:clamp(22px,3.4vw,34px)}
+    h2{font-size:20px;margin:24px 0 8px}
+    h3{font-size:18px;margin:16px 0 6px}
+    p,li{color:var(--muted);line-height:1.6}
+    ul,ol{margin:8px 0 0 18px}
+    li{margin:6px 0}
+    .section{border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+    .imgbox{aspect-ratio:16/9;border:1px dashed #2c3546;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#95a4c8;font-size:14px;text-align:center;padding:8px}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{border:1px solid #2a2f3d;padding:8px;text-align:center;font-size:14px;color:var(--muted)}
+    th{background:#151922;color:var(--text)}
+    footer{margin-top:24px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  </style>
+</head>
+<body data-active="lofi">
+<div class="container">
+<header>
+  <div class="brand">
+    <div class="logo" aria-hidden="true"></div>
+    ECSE 424 Group J
+  </div>
+  <nav>
+    <a href="index.html#home">Home</a>
+    <a href="observations.html">Observations and Proposal</a>
+    <a href="lofi.html" class="active">Low-Fidelity Prototype</a>
+    <a href="computer.html">Computer Prototype</a>
+    <a href="feedback.html">Formative Feedback</a>
+    <a href="alpha.html">Alpha System</a>
+    <a href="beta.html">Beta System</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Low-Fidelity Prototype</h1>
+
+  <!-- 10 Concept Designs -->
+  <section class="section">
+    <h2>10 Concept Designs</h2>
+
+    <ol>
+      <li><strong>Pebble Glow — Pocketable Stone Lamp (3)</strong>
+        <div class="imgbox">Image placeholder: Pebble Glow</div>
+        <p>Form: Smooth oval “pebble” shape, fits in palm.<br/>
+        Interaction: Tap top to cycle modes (Focus / Break / Weather).<br/>
+        Indicator: Soft internal LED glow through frosted shell.<br/>
+        Extra: Long press to enter Sleep Mode.<br/>
+        Portability: Magnetic charging base.</p>
+      </li>
+
+      <li><strong>FoldBeam — Origami Foldable Lamp</strong>
+        <div class="imgbox">Image placeholder: FoldBeam</div>
+        <p>Form: Triangular, flexible translucent panel.<br/>
+        Interaction: Folding changes mode:<br/>
+        Flat = Weather<br/>One fold = Focus<br/>Two folds = Break<br/>
+        Indicator: LED strips along inner folds with gradient glow.<br/>
+        Portability: Lightweight, collapsible.</p>
+      </li>
+
+      <li><strong>Halo Cube — Cube with Light Band</strong>
+        <div class="imgbox">Image placeholder: Halo Cube</div>
+        <p>Form: 7×7 cm rounded cube with central light band.<br/>
+        Interaction: Rotate cube to switch mode, tap top to adjust brightness.<br/>
+        Indicator: Color and pulse pattern on band reflect mode.<br/>
+        Portability: USB-C rechargeable.</p>
+      </li>
+
+      <li><strong>DeskBloom — Lamp in a Pot</strong>
+        <div class="imgbox">Image placeholder: DeskBloom</div>
+        <p>Form: Mini flower pot with detachable glowing stem.<br/>
+        Interaction: Pull out stem to power on; twist to switch modes.<br/>
+        Indicator: Leaf tips show weather; pot rim glows for timer cues.<br/>
+        Portability: Wireless charging stem.</p>
+      </li>
+
+      <li><strong>GlowBar — Pen-Sized Clip Lamp</strong>
+        <div class="imgbox">Image placeholder: GlowBar</div>
+        <p>Form: Slim cylindrical light bar.<br/>
+        Interaction: Slide finger on capacitive strip to switch modes.<br/>
+        Indicator: Linear color gradient along the bar.<br/>
+        Portability: Clips to monitors or notebooks.</p>
+      </li>
+
+      <li><strong>FocusDial — Rotating Knob Lamp (2)</strong>
+        <div class="imgbox">Image placeholder: FocusDial</div>
+        <p>Form: Minimalist modern desk lamp with circular shade.<br/>
+        Interaction: Rotate knob to change mode; double-tap top to toggle power.<br/>
+        Indicator: Light ring at the edge changes color by mode.<br/>
+        Portability: Compact table footprint.</p>
+      </li>
+
+      <li><strong>GlowFlame — Vintage Flame Lamp</strong>
+        <div class="imgbox">Image placeholder: GlowFlame</div>
+        <p>Form: Vintage oil-lamp style with glass chimney.<br/>
+        Interaction: Twist brass knob to adjust mode/intensity.<br/>
+        Indicator: Flame effect lights up for break reminders; pulsing flame for notifications.<br/>
+        Portability: Lightweight body with USB power.</p>
+      </li>
+
+      <li><strong>DonutHub — Donut-Shaped Touch Lamp</strong>
+        <div class="imgbox">Image placeholder: DonutHub</div>
+        <p>Form: Rounded donut shape with central void.<br/>
+        Interaction:<br/>Slide finger along outer ring to change mode.<br/>Press top to power on/off.<br/>
+        Indicator: Central void glows in mode-specific colors.<br/>
+        Extra: Long press to reset.<br/>
+        Portability: Integrated USB ports at base.</p>
+      </li>
+
+      <li><strong>TripodSync — Tap-to-Sync Tripod Lamp</strong>
+        <div class="imgbox">Image placeholder: TripodSync</div>
+        <p>Form: Fabric shade with wooden tripod legs.<br/>
+        Interaction: Foot tap sensor at base to switch modes.<br/>
+        Indicator: Auto light adjustment to time of day.<br/>
+        Extra: Gesture panel for manual control.<br/>
+        Portability: Lightweight tripod structure.</p>
+      </li>
+
+      <li><strong>MushLite — Mushroom Ambient Lamp (1)</strong>
+        <div class="imgbox">Image placeholder: MushLite</div>
+        <p>Form: Rounded mushroom dome and stem.<br/>
+        Interaction: Tap top dome to toggle modes; tilt left/right to control brightness.<br/>
+        Indicator: Soft breathing light effect during focus sessions.<br/>
+        Portability: Compact and sturdy.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- MushLite-Inspired — 10 New Lamp Design Concepts -->
+  <section class="section">
+    <h2>MushLite-Inspired — 10 New Lamp Design Concepts</h2>
+
+    <ol>
+      <li><strong>MushLite Mini</strong>
+        <div class="imgbox">Image placeholder: MushLite Mini</div>
+        <p>Form: Short cylinder (like a small thermos), rounded top dome.<br/>
+        Interaction: Tap top to toggle mode; tilt to adjust brightness.<br/>
+        Indicator: Breathing glow when active.<br/>
+        Extra: Portable — fits in cup holder.<br/>
+        Why: Ultra-simple, easy to carry and place anywhere.</p>
+      </li>
+
+      <li><strong>MushLite Orbit</strong>
+        <div class="imgbox">Image placeholder: MushLite Orbit</div>
+        <p>Form: Mushroom dome on a magnetic rotating base.<br/>
+        Interaction: Tap top for mode; tilt the whole lamp to dim; rotate base for color selection.<br/>
+        Indicator: Gradient light along base.<br/>
+        Extra: Dock rotates like a dial.</p>
+      </li>
+
+      <li><strong>MushLite Halo</strong>
+        <div class="imgbox">Image placeholder: MushLite Halo</div>
+        <p>Form: Slim cylindrical base + halo light ring at the bottom of dome.<br/>
+        Interaction: Tap top to change mode; tilt to control brightness.<br/>
+        Indicator: Halo color = mode color; dome soft glow.<br/>
+        Extra: Lightweight ring makes feedback clearer.</p>
+      </li>
+
+      <li><strong>MushLite Duo</strong>
+        <div class="imgbox">Image placeholder: MushLite Duo</div>
+        <p>Form: Double dome stacked vertically (focus + break indicators).<br/>
+        Interaction: Tap top to toggle modes; tap middle band to switch between Focus/Break setup.<br/>
+        Indicator: Upper dome = Focus, lower dome = Break color.<br/>
+        Extra: Perfect for quick mode recognition.</p>
+      </li>
+
+      <li><strong>MushLite Twist</strong>
+        <div class="imgbox">Image placeholder: MushLite Twist</div>
+        <p>Form: Dome + twistable mid-section.<br/>
+        Interaction: Tap to change mode; twist middle to adjust timer length.<br/>
+        Indicator: Top glow reflects mode; bottom indicator shows remaining time.<br/>
+        Extra: Good for tactile users.</p>
+      </li>
+
+      <li><strong>MushLite GlowStick</strong>
+        <div class="imgbox">Image placeholder: MushLite GlowStick</div>
+        <p>Form: Elongated mushroom — taller, bottle-like.<br/>
+        Interaction: Tap top to change mode; tilt upward = brighten, downward = dim.<br/>
+        Indicator: Gradient LED throughout body.<br/>
+        Extra: Easy to place on a desk like a tumbler.</p>
+      </li>
+
+      <li><strong>MushLite PebbleTop</strong>
+        <div class="imgbox">Image placeholder: MushLite PebbleTop</div>
+        <p>Form: Cylindrical body with a soft pebble-like touchpad on top.<br/>
+        Interaction: Tap center to toggle mode, slide finger on top for brightness.<br/>
+        Indicator: Dome edge glow for feedback.<br/>
+        Extra: More tactile variation, same logic.</p>
+      </li>
+
+      <li><strong>MushLite Loop</strong>
+        <div class="imgbox">Image placeholder: MushLite Loop</div>
+        <p>Form: Mushroom dome with a loop handle on top (like a lantern).<br/>
+        Interaction: Tap top or handle area to switch mode; tilt to dim.<br/>
+        Indicator: Dome glow and handle ring light.<br/>
+        Extra: Portable lamp version.</p>
+      </li>
+
+      <li><strong>MushLite FocusBeam</strong>
+        <div class="imgbox">Image placeholder: MushLite FocusBeam</div>
+        <p>Form: Mushroom dome with a soft diffuser strip on the side.<br/>
+        Interaction: Tap top to toggle mode; tilt left/right to adjust brightness; swipe side strip to change color.<br/>
+        Indicator: Dome for state, strip for dynamic color.<br/>
+        Extra: Combines tactile and gesture.</p>
+      </li>
+
+      <li><strong>MushLite SmartCap</strong>
+        <div class="imgbox">Image placeholder: MushLite SmartCap</div>
+        <p>Form: Bottle-like lamp with removable dome cap.<br/>
+        Interaction: Tap cap for mode; tilt base to adjust brightness; remove cap for “ambient” mode.<br/>
+        Indicator: Full body glow.<br/>
+        Extra: Adaptive — can be used upright or as a lantern.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Evaluation Table -->
+  <section class="section">
+    <h2>Evaluation Table</h2>
+    <table>
+      <tr><th>#</th><th>Variant</th><th>Prototype Simplicity</th><th>Interaction Clarity</th><th>Pomodoro Feedback</th><th>Weather Feedback</th><th>Overall</th></tr>
+      <tr><td>1</td><td>MushLite Mini</td><td>🟢 Easy</td><td>🟢 Clear</td><td>🟡 Basic but sufficient</td><td>🟡 Minimal</td><td>🟢 Excellent</td></tr>
+      <tr><td>2</td><td>MushLite Orbit</td><td>🟡 Medium</td><td>🟢 Very clear</td><td>🟢 Strong (base rotation = timer)</td><td>🟢 Strong (base light)</td><td>🟢 Excellent</td></tr>
+      <tr><td>3</td><td>MushLite Halo</td><td>🟡 Medium</td><td>🟢 Clear</td><td>🟢 Very strong (halo ring)</td><td>🟢 Very strong (dual layers)</td><td>🟢 Excellent</td></tr>
+      <tr><td>4</td><td>MushLite Duo</td><td>🟡 Medium</td><td>🟡 Moderate (two domes to explain)</td><td>🟢 Clear separation Focus/Break</td><td>🟡 Limited</td><td>🟡 Good</td></tr>
+      <tr><td>5</td><td>MushLite Twist</td><td>🟡 Medium</td><td>🟡 Moderate</td><td>🟢 Good tactile</td><td>🟡 Limited</td><td>🟡 Good</td></tr>
+      <tr><td>6</td><td>MushLite GlowStick</td><td>🟡 Medium</td><td>🟡 Moderate</td><td>🟢 Good (linear gradient)</td><td>🟡 Okay</td><td>🟡 Good</td></tr>
+      <tr><td>7</td><td>MushLite PebbleTop</td><td>🟢 Easy</td><td>🟢 Clear</td><td>🟡 Basic</td><td>🟡 Minimal</td><td>🟡 Good</td></tr>
+      <tr><td>8</td><td>MushLite Loop</td><td>🟢 Easy</td><td>🟢 Clear</td><td>🟡 Simple</td><td>🟡 Minimal</td><td>🟡 Good</td></tr>
+      <tr><td>9</td><td>MushLite FocusBeam</td><td>🟡 Medium</td><td>🟡 Moderate</td><td>🟢 Strong (side strip control)</td><td>🟡 OK</td><td>🟡 Good</td></tr>
+      <tr><td>10</td><td>MushLite SmartCap</td><td>🔴 Harder</td><td>🟡 Moderate</td><td>🟡 Flexible but complex</td><td>🟡 OK</td><td>🟠 Medium</td></tr>
+    </table>
+  </section>
+
+  <!-- Final Top 3 Picks -->
+  <section class="section">
+    <h2>Final Top 3 Picks</h2>
+
+    <h3>1. 🌿 MushLite Mini — Best for simplicity &amp; early user testing</h3>
+    <p><strong>Why:</strong> One core interaction: tap to switch modes, tilt to control brightness. Easy to build with one puck LED and foam shell. Perfect for Wizard-of-Oz Pomodoro timer test.</p>
+    <p><strong>Pomodoro use:</strong><br/>Warm breathing glow for focus<br/>Cool pulsing glow for break<br/>Soft ambient pattern for weather</p>
+    <p><strong>Ideal for:</strong> Initial prototype and usability baseline.</p>
+    <p><strong>Rational:</strong> The MushLite Mini concept focuses on minimal, intuitive interaction and a compact, portable form factor. Its simple cylindrical body and rounded top allow users to control all functions with just tap (to switch modes) and tilt or rotation (to adjust brightness). This design minimizes mechanical complexity while offering clear visual feedback through soft breathing and pulsing light patterns. It’s ideal for simulating Pomodoro focus/break transitions and simple weather forecast animations, making it an excellent candidate for the first low-fidelity prototype and usability testing. Its small size and single-interaction logic make it easy to fabricate and test with Wizard-of-Oz techniques.</p>
+
+    <h3>2. 🌀 MushLite Orbit — Best for interaction + control</h3>
+    <p><strong>Why:</strong> Base rotation gives an intuitive timer setting. Tap and tilt are familiar. Base lighting allows progress feedback and weather effects.</p>
+    <p><strong>Pomodoro use:</strong> Rotate base to set focus time. Base light shows progress, dome shows mode. Forecast animation can run around base.</p>
+    <p><strong>Ideal for:</strong> Richer interaction prototype, second concept in testing.</p>
+    <p><strong>Rational:</strong> The MushLite Orbit builds on the core simplicity of MushLite Mini but introduces a rotating base to give users more control over timer settings. This interaction mimics natural physical gestures, allowing users to rotate the base to set focus/break duration while tapping the top to change modes. The dome and base lighting are separated: the dome conveys the current mode (Focus, Break, Weather), and the base displays progress or forecast through light animations. This separation makes the lamp’s state easier to read at a glance and provides a richer testing ground for evaluating user comprehension of feedback cues. It offers higher interaction fidelity while remaining feasible for low-fidelity prototyping.</p>
+
+    <h3>3. ✨ MushLite Halo — Best for elegant feedback separation</h3>
+    <p><strong>Why:</strong> Halo ring gives clear visual progress, dome gives mode state. Still simple to build (light ring or simulation). Strong candidate for aesthetic usability testing.</p>
+    <p><strong>Pomodoro use:</strong> Halo fills gradually during focus; Dome color indicates mode; Halo animations overlay weather forecast (e.g., flow for wind, pulses for rain).</p>
+    <p><strong>Ideal for:</strong> Visual communication clarity &amp; user comprehension tests.</p>
+    <p><strong>Rational:</strong> The MushLite Halo variant emphasizes clarity of visual communication by integrating a halo light ring beneath the dome. This ring provides real-time timer progress visualization, while the dome indicates the current mode through color. This clear division allows users to distinguish between mode state and temporal feedback without extra buttons or screens. Its interaction model remains simple—tap to switch mode, rotate or tilt for brightness—and use halo-based gestures or an app for timer control. This makes MushLite Halo particularly strong for evaluating how well users interpret light-based cues for Pomodoro phases and weather conditions.</p>
+  </section>
+</main>
+
+<footer>© <span id="yr"></span> ECSE 424 Group J • Calm Tech Lamp</footer>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
