@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Name — Intro</title>
+  <meta name="description" content="Short intro to the project." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0d10; --card:#12151b; --muted:#aab3c0; --text:#eaf1ff; --accent:#7cc4ff; --ring:#2a6bf3;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 800px at 80% -10%, #1a2332 0%, rgba(26,35,50,0) 60%), var(--bg);}
+    .container{max-width:980px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#7cc4ff, #9effa6 60%);box-shadow:0 8px 24px rgba(124,196,255,.35)}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-weight:600}
+    nav a:hover{color:var(--text)}
+
+    .hero{padding:72px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+    .title{font-size:clamp(28px,3.6vw,44px);line-height:1.1;margin:0 0 12px;font-weight:800}
+    .subtitle{color:var(--muted);font-size:clamp(16px,1.8vw,18px)}
+    .cta{display:flex;gap:12px;margin-top:20px}
+    .btn{appearance:none;border:none;background:var(--text);color:#0b0d10;font-weight:700;padding:12px 16px;border-radius:12px;cursor:pointer;box-shadow:0 8px 24px rgba(234,241,255,.15)}
+    .btn.secondary{background:transparent;color:var(--text);outline:1px solid #2a3140}
+    .card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:18px}
+    .mock{aspect-ratio:16/10;background:linear-gradient(180deg,rgba(124,196,255,.18),rgba(124,196,255,0));border-radius:14px;border:1px dashed rgba(255,255,255,.15)}
+
+    section{padding:36px 0}
+    h2{font-size:22px;margin:0 0 12px}
+    p{color:var(--muted);margin:8px 0 0}
+
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    .grid .card{height:100%}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;background:#0e1116;border:1px solid #2a3140;padding:2px 8px;border-radius:8px;color:#cfe0ff}
+
+    footer{border-top:1px solid rgba(255,255,255,0.08);margin-top:24px;padding:24px 0;color:var(--muted);font-size:14px}
+
+    @media (max-width:860px){
+      .hero{grid-template-columns:1fr}
+      nav{display:none}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <strong>Project Name</strong>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#demo">Demo</a>
+        <a href="#team">Team</a>
+        <a href="#docs">Docs</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1 class="title">A one‑paragraph hook for your project.</h1>
+        <p class="subtitle">In 2–3 sentences, summarize the problem, your approach, and the primary value/impact. Keep it human and concrete.</p>
+        <div class="cta">
+          <a class="btn" href="#demo">View Demo</a>
+          <a class="btn secondary" href="#docs">Read the Report</a>
+        </div>
+        <p style="margin-top:14px;font-size:14px;color:var(--muted)">Repo: <a href="#" style="color:var(--accent)">github.com/yourname/project</a></p>
+      </div>
+      <div class="card">
+        <div class="mock"></div>
+        <p style="margin-top:10px;color:var(--muted);font-size:14px">Drop a screenshot or GIF of your prototype here.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p><strong>Problem</strong>: Briefly describe the user/context and pain points.</p>
+      <p><strong>Solution</strong>: What you built and why it matters.</p>
+      <p><strong>Outcomes</strong>: Key metrics, validation, or user feedback.</p>
+    </section>
+
+    <section id="features">
+      <h2>Key Features</h2>
+      <div class="grid">
+        <div class="card"><h3>Feature One</h3><p>What it does and the benefit.</p></div>
+        <div class="card"><h3>Feature Two</h3><p>What it does and the benefit.</p></div>
+        <div class="card"><h3>Feature Three</h3><p>What it does and the benefit.</p></div>
+      </div>
+    </section>
+
+    <section id="demo">
+      <h2>Quick Demo</h2>
+      <div class="card">
+        <p>Embed a GIF, image, or link to a video demo. For example:
+          <br><span class="kbd">/assets/demo.gif</span> or <a href="#" style="color:var(--accent)">YouTube link</a>.</p>
+      </div>
+    </section>
+
+    <section id="docs">
+      <h2>Documentation</h2>
+      <div class="card">
+        <ul>
+          <li><a href="#" style="color:var(--accent)">Report / Paper (PDF)</a></li>
+          <li><a href="#" style="color:var(--accent)">Setup & Run</a> — prerequisites, install, run</li>
+          <li><a href="#" style="color:var(--accent)">Architecture</a> — diagram + key decisions</li>
+          <li><a href="#" style="color:var(--accent)">Evaluation</a> — methods, datasets, results</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="team">
+      <h2>Team</h2>
+      <div class="card">
+        <ul>
+          <li>Name A — role, email, links</li>
+          <li>Name B — role, email, links</li>
+          <li>Name C — role, email, links</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container" style="padding:0">
+        <div>© <span id="yr"></span> Your Team • <a href="#" style="color:var(--accent)">GitHub</a> • <a href="#" style="color:var(--accent)">License</a></div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
