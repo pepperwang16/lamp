@@ -43,10 +43,696 @@
   </header>
 
   <main>
-    <h1>Computer Prototype</h1>
-    <section class="section">
-      <p>Coming soon.</p>
-    </section>
+    <!-- User Manual Section -->
+<section class="section">
+  <h2>User Manual — MushLite Calm Lamp Computer Prototype</h2>
+
+  <h3>System Overview</h3>
+  <p>
+    This lamp is a smart lighting system that combines weather forecasting and Pomodoro together.
+    Through the web-based computer prototype, users can experience different lighting modes, timer settings, and interactive behaviors.
+    The system is designed to offer three primary modes, helping users quickly switch lighting environments according to their mood or activity.
+  </p>
+
+  <h3>System Functions</h3>
+  <table>
+    <tr>
+      <th>Function</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Mode Change</td>
+      <td>Users can switch between Break, Focus, and Weather modes to experience different lighting atmospheres.</td>
+    </tr>
+    <tr>
+      <td>Brightness Control</td>
+      <td>The user can adjust the brightness of the lamp using a slider.</td>
+    </tr>
+    <tr>
+      <td>Timer Setting</td>
+      <td>Users can set an automatic light-off timer for 5, 10, or 30 minutes.</td>
+    </tr>
+    <tr>
+      <td>Visual Feedback</td>
+      <td>The lamp color and brightness on the screen dynamically change to reflect the selected mode and brightness level.</td>
+    </tr>
+  </table>
+
+  <h3>User Instructions</h3>
+  <ol>
+    <li>
+      <strong>Open the Web Application:</strong><br>
+      Visit 
+      <a href="https://calm-lamp-pwbhez5wd-jininijs-projects.vercel.app" target="_blank" style="color:var(--accent)">
+        https://calm-lamp-pwbhez5wd-jininijs-projects.vercel.app
+      </a>
+    </li>
+
+    <li>
+      <strong>Main Interface Overview:</strong><br>
+      The main screen displays the lamp model in the center, with the control panel located below.
+    </li>
+
+    <li>
+      <strong>Switch Modes:</strong><br>
+      Click the “Mode” button to cycle through Break, Focus, and Weather modes.
+      Each mode presents distinct colors and brightness settings.
+    </li>
+
+    <li>
+      <strong>Adjust Brightness:</strong><br>
+      Move the Brightness slider to modify light intensity.
+      The lamp’s appearance updates in real time to reflect changes.
+    </li>
+
+    <li>
+      <strong>Set a Timer:</strong><br>
+      Click the “Timer” button and choose a duration (e.g., 5 min, 10 min, 30 min).
+      The system will confirm that the timer has been successfully set.
+    </li>
+
+    <li>
+      <strong>Experience Feedback:</strong><br>
+      When the mode changes successfully, the lamp’s color updates immediately.<br>
+      When the timer starts, the remaining countdown time appears on the screen.
+    </li>
+
+    <li>
+      <strong>Exit the Application:</strong><br>
+      Simply close the browser window to exit.
+    </li>
+  </ol>
+</section>
+
+<!-- Design Evolution -->
+<section class="section">
+  <h2>Design Evolution</h2>
+
+  <p>
+    Based on findings from the low-fidelity prototype testing and peer feedback, 
+    the Calm-Tech Lamp design underwent several important revisions before developing 
+    the computer prototype. These changes focused on improving clarity, intuitiveness, 
+    and the overall calm interaction experience.
+  </p>
+
+  <div class="section" style="margin-top:16px">
+    <h3>Consolidation of Interaction Model</h3>
+    <p>
+      The previous test result revealed that users preferred fewer, clearer gestures. 
+      In the computer prototype, we streamlined these into simple, distinct interactions: 
+      <em>click</em> to switch modes, <em>slider or arrow keys</em> to adjust brightness, 
+      and <em>knob rotation</em> to set focus duration. This reduced confusion and supported 
+      faster learnability observed in testing.
+    </p>
+  </div>
+
+  <div class="section" style="margin-top:16px">
+    <h3>Enhanced Visual Feedback Consistency</h3>
+    <p>
+      In the lo-fi tests, participants reported that some light cues were hard to distinguish 
+      (e.g., focus vs. break colors) and that transitions were too abrupt. The computer prototype 
+      introduced smoother gradient transitions and standardized color mapping — 
+      <strong>amber for focus</strong>, <strong>blue for break</strong>, 
+      <strong>yellow for lamp</strong> — ensuring better recognition and comfort 
+      during prolonged use.
+    </p>
+  </div>
+
+  <div class="section" style="margin-top:16px">
+    <h3>Refinement of Brightness and Timer Controls</h3>
+    <p>
+      Lo-fi feedback showed that participants often over-adjusted brightness or forgot to start 
+      the Pomodoro timer. The digital prototype introduced finer brightness control and visible 
+      timer confirmation to provide reassuring feedback while maintaining minimal cognitive load.
+    </p>
+  </div>
+</section>
+
+
+<!-- Prototype Implementation Section -->
+<section class="section">
+  <h2>Prototype Implementation</h2>
+
+  <!-- subsection: link button -->
+  <div class="section" style="margin-top:12px">
+    <h3>Access the Computer Prototype</h3>
+    <p>Click below to open the interactive Calm-Technology Lamp computer prototype:</p>
+    <a href="https://calm-lamp.vercel.app/"
+       target="_blank"
+       style="display:inline-block;text-decoration:none;background:var(--accent);color:#0b0d10;font-weight:700;
+       padding:12px 20px;border-radius:12px;text-align:center;box-shadow:0 4px 14px rgba(124,196,255,.3)">
+       ▶ Open Computer Prototype
+    </a>
+  </div>
+
+  <!-- subsection: image placeholders -->
+  <div class="section" style="margin-top:20px">
+    <h3>Exterior Design </h3>
+
+    <div class="grid">
+      <div class="imgbox">
+        <img src="assets/Brightness_down.PNG" alt="Brightness down state"
+             style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+        <p style="font-size:14px;color:#9fb0d1;margin-top:4px;text-align:center;">Brightness Down</p>
+      </div>
+  
+      <div class="imgbox">
+        <img src="assets/brightness_up.PNG" alt="Brightness up state"
+             style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+        <p style="font-size:14px;color:#9fb0d1;margin-top:4px;text-align:center;">Brightness Up</p>
+      </div>
+  
+      <div class="imgbox">
+        <img src="assets/Timer.png" alt="Timer function active"
+             style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+        <p style="font-size:14px;color:#9fb0d1;margin-top:4px;text-align:center;">Timer Mode</p>
+      </div>
+  
+      <div class="imgbox">
+        <img src="assets/Sunny.PNG" alt="Sunny weather cue"
+             style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+        <p style="font-size:14px;color:#9fb0d1;margin-top:4px;text-align:center;">Sunny Weather</p>
+      </div>
+  
+      <div class="imgbox">
+        <img src="assets/Cloudy.PNG" alt="Cloudy weather cue"
+             style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+        <p style="font-size:14px;color:#9fb0d1;margin-top:4px;text-align:center;">Cloudy Weather</p>
+      </div>
+  
+      <div class="imgbox">
+        <img src="assets/Rain.PNG" alt="Rainy weather cue"
+             style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+        <p style="font-size:14px;color:#9fb0d1;margin-top:4px;text-align:center;">Rainy Weather</p>
+      </div>
+  
+      <div class="imgbox">
+        <img src="assets/Windy.PNG" alt="Windy weather cue"
+             style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+        <p style="font-size:14px;color:#9fb0d1;margin-top:4px;text-align:center;">Windy Weather</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- User Population Section -->
+<section class="section">
+  <h2>User Population</h2>
+
+  <p>
+    In this section, we define the target user population for the test session of our project. 
+    This population is aligned with the user segments previously identified and refined for the purpose of usability testing. 
+    Participants will be selected from groups that realistically represent everyday users of a calm-technology desk companion 
+    designed to support focus management (Pomodoro) and glanceable weather awareness in their regular work or study environments.
+  </p>
+
+  <!-- Target User Segments -->
+  <div class="section" style="margin-top:20px">
+    <h3>Target User Segments</h3>
+
+    <h4>Primary User Segment: Undergraduate and Graduate Students</h4>
+    <p><strong>Characteristics:</strong></p>
+    <ul>
+      <li>Students in the age range of 18–30, typically balancing coursework, study sessions, and part-time work.</li>
+      <li>They spend long hours at desks or in libraries and are familiar with productivity tools such as Pomodoro timers, focus apps, or wearable devices.</li>
+    </ul>
+
+    <p><strong>Needs and Goals:</strong></p>
+    <ul>
+      <li>Students need subtle, easy-to-use tools that help them maintain focus and remind them to take breaks without introducing more screen distractions.</li>
+      <li>They also benefit from quick ambient weather cues such as color changes indicating abrupt weather shifts before leaving for class or outdoor activities.</li>
+      <li>Their main goals are to stay concentrated, pace their breaks effectively, and prepare for weather changes without needing to check a phone.</li>
+    </ul>
+
+    <h4>Secondary User Segment: Academic Researchers and Office Professionals</h4>
+    <p><strong>Characteristics:</strong></p>
+    <ul>
+      <li>Researchers, teaching assistants, or early career professionals aged 25–45 who spend extended hours working on computers, coding, or analyzing data.</li>
+      <li>They have moderate to high technical literacy and typically work in indoor, focused environments.</li>
+    </ul>
+
+    <p><strong>Needs and Goals:</strong></p>
+    <ul>
+      <li>This segment values quiet, non-intrusive tools that signal when to rest or resume concentration, promoting sustainable productivity.</li>
+      <li>Subtle weather notifications are also useful for them to plan commutes or lab work when abrupt weather changes (e.g., rain, snow, temperature drops) occur.</li>
+      <li>Their primary goals are to sustain deep work, reduce fatigue, and maintain environmental awareness in a calm and minimal way.</li>
+    </ul>
+  </div>
+
+  <!-- Participants for Testing -->
+  <div class="section" style="margin-top:20px">
+    <h3>Participants for Testing</h3>
+
+    <p>
+      To ensure that the usability testing reflects realistic and representative interactions with the Calm-Tech Lamp, 
+      participants will be recruited primarily from the McGill University community.
+    </p>
+
+    <p><strong>Number of Participants:</strong></p>
+    <ul>
+      <li>We plan to recruit 2–3 undergraduate or graduate students and 1–2 researchers or office professionals, for a total of approximately 3–5 participants.</li>
+      <li>This sample size is sufficient for early-stage usability testing, as it allows us to identify the majority of usability issues while keeping the evaluation focused and manageable.</li>
+    </ul>
+
+    <p><strong>Participant Criteria:</strong></p>
+    <ul>
+      <li><strong>Age Range:</strong> 18–45</li>
+      <li><strong>Experience with Technology:</strong> Basic familiarity with computers and productivity tools; prior experience with timers or smart devices is beneficial but not required.</li>
+      <li><strong>Environment:</strong> Individuals who work or study for extended periods at a desk and may benefit from calm, ambient feedback on focus and weather conditions.</li>
+    </ul>
+
+    <p><strong>Use Cases for Simulation:</strong></p>
+    <ul>
+      <li>Students will simulate a Pomodoro study session, adjusting focus and break timers and observing ambient weather updates.</li>
+      <li>Researchers or professionals will simulate long work sessions, using the lamp to stay on schedule while noting any sudden weather change indications.</li>
+    </ul>
+
+    <p>
+      This recruitment strategy ensures coverage of both primary and secondary user needs, 
+      capturing feedback from individuals who frequently engage in desk-based cognitive work 
+      and would naturally benefit from a calm, glanceable focus-and-weather device.
+    </p>
+  </div>
+</section>
+
+<!-- Usability Goals -->
+<section class="section">
+  <h2>Usability Goals</h2>
+
+  <p>Based on feedback from the previous low-fidelity prototype and the current stage of the Calm-Tech Lamp’s development, the usability goals focus on evaluating how effectively the system supports users in managing focus and break cycles using the Pomodoro technique, while also providing calm weather awareness through subtle visual cues. The overarching objective is to ensure that the lamp delivers non-intrusive, intuitive guidance that enhances focus and situational awareness without requiring constant digital interaction or visual attention.</p>
+
+  <div class="section" style="margin-top:16px">
+    <h3>Ease of Use</h3>
+    <p>Users should be able to perform all essential interactions such as starting or stopping a focus session, adjusting brightness, and interpreting weather updates within the first 10 minutes of use, with little to no external instruction. Success will be measured by the percentage of participants who complete all benchmark tasks on their first attempt and the time taken for each, confirming that the Calm-Tech Lamp’s interactions are straightforward, efficient, and user-friendly.</p>
+    <p><strong>Rationale:</strong> The Calm-Tech Lamp web prototype is designed to reduce cognitive load and minimize the need for active digital interaction. Its controls clicking the dome to change modes, dragging the knob or using the left/right arrow keys to adjust focus duration, and sliding or using the up/down arrow keys to control brightness are intended to feel natural and intuitive. Users should be able to perform these actions comfortably and confidently within their first session, without requiring detailed instructions or prior experience.</p>
+  </div>
+
+  <div class="section" style="margin-top:16px">
+    <h3>Learnability</h3>
+    <p>First-time users should be able to understand the meaning of the lamp’s color cues and animations and remember how to use each interaction method clicking the dome to change modes, dragging the knob or using the left/right arrow keys to set focus duration, and adjusting brightness through the slider or up/down keys after a single session. We will evaluate learnability by asking participants to recall the purpose of each mode and interaction at the end of the test.</p>
+    <p><strong>Rationale:</strong> As a calm-technology interface, the lamp’s visual feedback should be self-explanatory and memorable. Users should not need written instructions or repeated demonstrations to operate it effectively. The goal is for them to rely on intuitive color cues and smooth animations to understand state changes and controls naturally.</p>
+  </div>
+
+  <div class="section" style="margin-top:16px">
+    <h3>Error Accommodation</h3>
+    <p>The Calm-Tech Lamp web prototype should minimize user errors such as clicking the wrong mode, misunderstanding the current state, or accidentally resetting the focus timer. We aim for no more than two interaction errors per session per user, and users should be able to recover easily without external assistance.</p>
+    <p><strong>Rationale:</strong> A calm-technology interface should prevent frustration and confusion by providing clear, immediate visual feedback. Each interaction gives a confirming cue such as a brief glow pulse when changing modes or a smooth color transition that clarifies whether the lamp is in Lamp (yellow), Focus (amber/orange), Break (blue), or Weather (purple or weather-based color) mode. These responses help users recognize successful inputs instantly and correct mistakes intuitively, without disrupting their focus session or needing to restart the system.</p>
+  </div>
+
+  <div class="section" style="margin-top:16px">
+    <h3>Utility</h3>
+    <p>All implemented features — including the focus timer, break indicator, brightness adjustment, and weather awareness display — must be perceived as useful and relevant to the user’s daily workflow. Participants will rate the usefulness of each feature on a 5-point Likert scale. A successful design will achieve at least 80% positive ratings (4 or 5 out of 5).</p>
+    <p><strong>Rationale:</strong> The Calm-Tech Lamp’s core purpose is to deliver meaningful, glanceable feedback that enhances focus and situational awareness without requiring active attention. Each mode fulfills a distinct and practical role: the soft yellow lamp mode provides ambient comfort, the amber focus mode encourages concentration through gradual progress cues, the cool blue break mode signals rest, and the weather mode conveys real-world conditions. When users intuitively recognize and appreciate these cues, the lamp fulfills its calm-technology goal of unobtrusive assistance that harmonizes with daily life rather than disrupting it.</p>
+  </div>
+
+  <div class="section" style="margin-top:16px">
+    <h3>User Satisfaction</h3>
+    <p>Participants should report overall satisfaction with the Calm-Tech Lamp’s visual aesthetics, interaction simplicity, and calm feedback experience. User satisfaction will be measured through post-test surveys and short interviews, aiming for an average rating of at least 4 out of 5 on clarity, comfort, and pleasantness to confirm that the lamp provides an enjoyable, intuitive, and soothing user experience.</p>
+    <p><strong>Rationale:</strong> Positive emotional response is central to calm design; the Calm-Tech Lamp should evoke a sense of control, focus, and relaxation through soft lighting, smooth color transitions, and intuitive interactions. The warm amber focus light, cool blue break light, and distinct weather-based tones should remain balanced and non-distracting, while adjustable brightness and duration enhance comfort and autonomy, collectively fostering well-being and calm productivity rather than pressure or visual fatigue.</p>
+  </div>
+
+  <div class="section" style="margin-top:16px">
+    <h3>User Comfort and Safety</h3>
+    <p>Users must feel visually comfortable while interacting with the Calm-Tech Lamp for extended periods of focus and rest. The study will ask whether any light transitions, brightness levels, or color changes caused distraction, eye strain, or discomfort during use, ensuring that all on-screen interactions such as adjusting brightness with the slider or arrow keys and observing smooth transitions between lamp, focus, break, and weather modes—remain gentle and non-intrusive. Because the prototype relies on light as its primary feedback mechanism, maintaining visual comfort is essential; brightness levels, color shifts, and animation speeds must stay subtle, gradual, and balanced to prevent fatigue.</p>
+    <p><strong>Rationale:</strong> As a calm-technology system, the lamp’s lighting feedback should encourage relaxation, focus, and awareness without overwhelming the user. Subtle animations and balanced brightness transitions create an ambient and reassuring environment that supports productivity and mental well-being. By ensuring that color cues remain soft and consistent, the Calm-Tech Lamp provides a safe and pleasant digital experience suitable for long-term use.</p>
+  </div>
+
+  <div class="section" style="margin-top:16px">
+    <h3>Benchmark Tasks</h3>
+    <p>Having established the usability goals for the Calm-Tech Lamp, we now define specific benchmark tasks that reflect the system’s key interactive functions. Each task is designed to simulate real-world scenarios, such as managing focus sessions using the Pomodoro technique, adjusting ambient lighting for comfort, and staying aware of weather conditions through subtle color cues. Participants will complete each task without detailed instructions, allowing examiners to observe how naturally they interpret and use the lamp’s interactive features such as clicking the dome to change modes, rotating the on-screen knob to set focus time, and using the slider or arrow keys to adjust brightness. This approach ensures that the evaluation focuses on intuitive understanding, visual feedback clarity, and the overall calmness of the user experience.</p>
+
+    <h4>1. Switch Between Modes</h4>
+    <p><strong>Objective:</strong> Evaluate how easily users can initiate a focus session and interpret the lamp’s visual feedback.</p>
+    <p><strong>Subtasks:</strong></p>
+    <ul>
+      <li>Click the dome to cycle sequentially through all modes: Lamp → Pomodoro → Weather → Lamp.</li>
+      <li>Observe the color feedback and identify each mode by its visual cue (e.g., soft yellow = Lamp, blue = Focus, lavender = Weather loading).</li>
+    </ul>
+    <p><strong>Testing Metrics:</strong> Time taken to start a session, understanding of visual feedback, and number of incorrect actions.</p>
+    <p><strong>Usability Goals Tested:</strong> Ease of Use, Learnability, Visual Clarity</p>
+
+    <h4>2. Adjust Focus Duration</h4>
+    <p><strong>Objective:</strong> Assess how easily users can control and interpret the Pomodoro duration setting.</p>
+    <p><strong>Subtasks:</strong></p>
+    <ul>
+      <li>Once in Pomodoro Mode, use the on-screen knob or arrow keys (← / →) to adjust the timer from the default 5 minutes → 1 minute (to shorten the test).</li>
+      <li>Verify that the display updates in real time and reflects the correct countdown duration.</li>
+    </ul>
+    <p><strong>Testing Metrics:</strong> Accuracy of selected time, time taken to complete the adjustment, and confusion (if any) about control direction.</p>
+    <p><strong>Usability Goals Tested:</strong> Efficiency, Learnability, Error Accommodation</p>
+
+    <h4>3. Adjust Brightness</h4>
+    <p><strong>Objective:</strong> Evaluate user comfort and control in managing ambient lighting levels.</p>
+    <p><strong>Subtasks:</strong></p>
+    <ul>
+      <li>Use the brightness slider or the ↑ / ↓ arrow keys to change the lamp’s intensity.</li>
+      <li>Observe the smoothness of visual transitions and stop when lighting feels comfortable.</li>
+    </ul>
+    <p><strong>Testing Metrics:</strong> Number of adjustments made, time to reach preferred brightness, and self-reported comfort level.</p>
+    <p><strong>Usability Goals Tested:</strong> Efficiency, Satisfaction, Comfort &amp; Safety</p>
+
+    <h4>4. Test the Pomodoro Focus Cycle</h4>
+    <p><strong>Objective:</strong> Determine whether users can successfully start, monitor, and complete a Pomodoro session.</p>
+    <p><strong>Subtasks:</strong></p>
+    <ul>
+      <li>In Pomodoro Mode, press Start to begin the 1-minute focus session.</li>
+      <li>Observe the progress ring filling.</li>
+      <li>Wait for the session to end and confirm that it automatically transitions to Break Mode (cool blue).</li>
+    </ul>
+    <p><strong>Testing Metrics:</strong> Completion rate without assistance, comprehension of timer feedback, and understanding of automatic transitions.</p>
+    <p><strong>Usability Goals Tested:</strong> Ease of Use, Learnability, Satisfaction, Utility</p>
+
+    <h4>5. Enable Location and View Current Weather</h4>
+    <p><strong>Objective:</strong> Assess user understanding of permission prompts and feedback clarity in Weather Mode.</p>
+    <p><strong>Subtasks:</strong></p>
+    <ul>
+      <li>Switch to Weather Mode using the dome.</li>
+      <li>When prompted, allow the app to access location to display current weather.</li>
+      <li>Observe the lamp color update to match the detected condition (e.g., yellow = sunny, blue = rainy, pink = windy, gray = cloudy).</li>
+    </ul>
+    <p><strong>Testing Metrics:</strong> Success rate in granting permission, time to recognize weather cues, and interpretation accuracy.</p>
+    <p><strong>Usability Goals Tested:</strong> Learnability, Utility, Satisfaction</p>
+
+    <h4>6. Simulate Future Weather Change</h4>
+    <p><strong>Objective:</strong> Evaluate user comprehension of the “Apply Future” function and their interpretation of abrupt visual transitions.</p>
+    <p><strong>Subtasks:</strong></p>
+    <ul>
+      <li>Within Weather Mode, manually set Current Weather and Future Weather to different conditions.</li>
+      <li>Click Apply Future to simulate the transition.</li>
+      <li>Observe whether the lamp’s color change clearly and calmly represents the new condition.</li>
+    </ul>
+    <p><strong>Testing Metrics:</strong> Success rate in applying new settings, accuracy in recognizing the new weather color, and clarity of feedback transition.</p>
+    <p><strong>Usability Goals Tested:</strong> Learnability, Feedback Clarity, Satisfaction</p>
+
+    <h4 style="margin-top:18px">Benchmark Tasks — Summary Table</h4>
+    <table>
+      <tr>
+        <th>Task</th>
+        <th>Function Tested</th>
+        <th>Main Goals Evaluated</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Mode Switching (Lamp → Pomodoro → Weather → Lamp)</td>
+        <td>Ease, Efficiency, Visual Clarity</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Adjust Focus Duration</td>
+        <td>Efficiency, Learnability, Error Recovery</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Adjust Brightness</td>
+        <td>Efficiency, Satisfaction, Comfort</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Pomodoro Focus Cycle</td>
+        <td>Ease, Learnability, Satisfaction, Utility</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Enable Location for Weather</td>
+        <td>Learnability, Utility, Satisfaction</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Apply Future Weather</td>
+        <td>Learnability, Feedback Clarity, Satisfaction</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- Usability Test Procedure -->
+<section class="section">
+  <h2>Usability Test Procedure</h2>
+
+  <p>Having finalized the usability goals and benchmark tasks for the Calm-Tech Lamp computer prototype, we will now conduct a usability test to evaluate the prototype’s performance and intuitiveness. Each session will last approximately 10–15 minutes, during which participants will interact with the prototype and complete specific tasks related to focus-time management (Pomodoro) and weather-change awareness.</p>
+
+  <!-- Number of Examiners Required -->
+  <div class="section" style="margin-top:16px">
+    <h3>Number of Examiners Required</h3>
+    <p><strong>Facilitator</strong> – Introduces the session, starts the prototype, and guides the participant through the tasks without offering direct assistance.</p>
+    <p><strong>Observer</strong> – Records task completion times, behaviors, and qualitative feedback during the test.</p>
+    <p>Because the Calm-Tech Lamp test is low-risk and stationary, a single examiner may perform both roles when resources are limited (facilitate and take structured notes with the observation sheet).</p>
+  </div>
+
+  <!-- Equipment Required -->
+  <div class="section" style="margin-top:16px">
+    <h3>Equipment Required</h3>
+    <ul>
+      <li>Laptop or desktop with a modern browser (Chrome / Safari / Firefox) capable of running the React-based prototype online (Vercel link).</li>
+      <li>Stable internet connection (for weather updates and location-based data).</li>
+      <li>Stopwatch or timing software to record task times and session duration.</li>
+      <li>Observation sheet or spreadsheet to note performance, errors, and reactions.</li>
+      <li>Screen recording software (optional) for post-test review.</li>
+      <li>Post-test survey form (Google Form or printed questionnaire).</li>
+    </ul>
+  </div>
+
+  <!-- Prototype Handling -->
+  <div class="section" style="margin-top:16px">
+    <h3>Prototype Handling</h3>
+    <ul>
+      <li>Launch the prototype in full-screen mode.</li>
+      <li>Confirm interactions (tap/click, rotation, tilt or arrow keys) function correctly.</li>
+      <li>Ensure ambient lighting allows color feedback to be clearly visible.</li>
+      <li>Refer to the user manual if issues occur, but do not provide extra instructions to participants.</li>
+    </ul>
+  </div>
+
+  <!-- Examiner Instructions -->
+  <div class="section" style="margin-top:16px">
+    <h3>Examiner Instructions</h3>
+
+    <h4>Observer Briefing</h4>
+    <p>Quietly monitor how the participant:</p>
+    <ul>
+      <li>Interprets lamp cues and interacts without prior instruction.</li>
+      <li>Uses mouse/keyboard to simulate gestures (click dome to change modes; drag on-screen knob to adjust focus time; arrow keys/scroll for brightness).</li>
+      <li>Reacts to color/animation feedback (start/end of focus, weather change).</li>
+      <li>Shows confusion or hesitation.</li>
+    </ul>
+    <p>Record: task completion time, number of incorrect actions/errors, verbal comments or visible signs of confusion. Avoid interference unless comfort or safety is compromised.</p>
+  </div>
+
+  <!-- Participant Briefing and Introduction -->
+  <div class="section" style="margin-top:16px">
+    <h3>Participant Briefing and Introduction</h3>
+    <p><em>User Introduction Script:</em><br>
+      “Thank you for joining our usability test. Today, you’ll be evaluating the Calm-Tech Lamp, a smart desk companion that helps manage focus sessions and provides subtle weather notifications. We’re testing how easy it is to understand and use the lamp’s features.<br>
+      There are no right or wrong actions — we just want to see how naturally you interact with it. Please think aloud as you perform the tasks.<br>
+      The session should take less than 15 minutes, and we’ll ask for your feedback afterward. Sound good?”</p>
+    <p>Participants will then sign a consent form and are reminded they may stop at any time.</p>
+    <a href="https://docs.google.com/document/d/1s3TDoekfDpGePDJehjOrxSFJLQCpMwpPC5Ibb4mmYTM/edit?usp=sharing"
+       target="_blank"
+       style="display:inline-block;text-decoration:none;background:var(--accent);color:#0b0d10;font-weight:700;padding:10px 16px;border-radius:12px;box-shadow:0 4px 14px rgba(124,196,255,.3)">
+       ▶ Participant Consent Form
+    </a>
+  </div>
+
+  <!-- Testing Environment -->
+  <div class="section" style="margin-top:16px">
+    <h3>Testing Environment</h3>
+    <ul>
+      <li>Indoors (quiet lab, library room, or study space).</li>
+      <li>Lighting should not interfere with visibility of dome and halo colors.</li>
+      <li>Test one participant at a time to minimize distraction.</li>
+    </ul>
+  </div>
+
+  <!-- Tasks to Be Performed -->
+  <div class="section" style="margin-top:16px">
+    <h3>Tasks to Be Performed</h3>
+    <ul>
+      <li><strong>Start a Focus Session</strong>: Tap lamp to enter focus mode.</li>
+      <li><strong>Adjust Focus Duration</strong>: Rotate base to modify length (e.g., 5 → 60 min).</li>
+      <li><strong>Adjust Brightness</strong>: Tilt / drag vertically / arrow keys.</li>
+      <li><strong>Interpret Weather Cue</strong>: Observe sudden halo change and describe meaning.</li>
+      <li><strong>Complete Full Pomodoro Cycle</strong>: Let focus end, transition to break, and interpret feedback.</li>
+    </ul>
+
+    <!-- Task Log Table -->
+    <h4 style="margin-top:10px">Observation Sheet (per participant)</h4>
+    <table>
+      <tr>
+        <th>Participant</th>
+        <th>Task</th>
+        <th>Completed (Y/N)</th>
+        <th>Time (sec)</th>
+        <th>Errors</th>
+        <th>Needed Help (Y/N)</th>
+        <th>Comments</th>
+      </tr>
+      <tr><td>P1</td><td>Start Focus Session</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>P1</td><td>Adjust Duration</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>P1</td><td>Adjust Brightness</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>P1</td><td>Interpret Weather Cue</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>P1</td><td>Complete Pomodoro Cycle</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+      <tr><td>P2</td><td>Start Focus Session</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>P2</td><td>Adjust Duration</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>P2</td><td>Adjust Brightness</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>P2</td><td>Interpret Weather Cue</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>P2</td><td>Complete Pomodoro Cycle</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+      <tr><td>P3</td><td>Start Focus Session</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>P3</td><td>Adjust Duration</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>P3</td><td>Adjust Brightness</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>P3</td><td>Interpret Weather Cue</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>P3</td><td>Complete Pomodoro Cycle</td><td></td><td></td><td></td><td></td><td></td></tr>
+    </table>
+
+    <h4 style="margin-top:10px">Metrics to record</h4>
+    <ul>
+      <li>Task completion time.</li>
+      <li>Number of incorrect or repeated actions.</li>
+      <li>Instances where participant requested clarification.</li>
+      <li>Observed confusion or frustration.</li>
+      <li>Verbalized comments during think-aloud.</li>
+    </ul>
+  </div>
+
+  <!-- Post-Test -->
+  <div class="section" style="margin-top:16px">
+    <h3>Post-Test</h3>
+    <ul>
+      <li>Participants fill a short post-test questionnaire rating ease of use, efficiency, satisfaction, and comfort (5-point Likert).</li>
+      <li>Brief interview (2–3 questions) about cues that felt intuitive, confusing, or distracting.</li>
+    </ul>
+    <a href="https://docs.google.com/document/d/1gBX-Kmi1uyCLnee3CsLtwGnHi31A6pXN2A-tja9g_hs/edit?usp=sharing"
+       target="_blank"
+       style="display:inline-block;text-decoration:none;background:var(--accent);color:#0b0d10;font-weight:700;padding:10px 16px;border-radius:12px;box-shadow:0 4px 14px rgba(124,196,255,.3)">
+       ▶ Full Questionnaire
+    </a>
+  </div>
+
+  <!-- Safety and Ethical Considerations -->
+  <div class="section" style="margin-top:16px">
+    <h3>Safety and Ethical Considerations</h3>
+    <ul>
+      <li>All tasks are performed while seated.</li>
+      <li>Ensure brightness changes are not visually uncomfortable.</li>
+      <li>Participants may stop the session at any time.</li>
+      <li>No personally identifiable data collected; all results anonymized.</li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- Reporting -->
+<section class="section">
+  <h2>Reporting</h2>
+
+  <!-- 1. Recording Procedure -->
+  <div class="section" style="margin-top:16px">
+    <h3>1. Recording Procedure</h3>
+    <p>During each session, two examiners will observe and record both quantitative and qualitative data as participants complete the six benchmark tasks. All sessions should be video-recorded (including screen interactions and lamp color feedback) to support post-session analysis.</p>
+
+    <h4>a. Quantitative Data (Objective Measures)</h4>
+    <p>Each task will be logged using a standardized observation sheet or digital form (e.g., Google Sheets or Notion). The following metrics will be captured in real time:</p>
+    <ul>
+      <li>Task completion time (start to finish for each benchmark task)</li>
+      <li>Number of errors or incorrect actions (e.g., wrong control, missed interaction)</li>
+      <li>Assistance required (none, minimal, major)</li>
+      <li>Success rate (completed vs. incomplete)</li>
+      <li>Accuracy of interpretations (e.g., correct weather color identification)</li>
+    </ul>
+    <p><strong>Each entry should include:</strong> Participant ID, Task #, Time (s), Errors, Assistance Level, Success (Y/N)</p>
+
+    <h4>b. Qualitative Data (Subjective Feedback)</h4>
+    <p>Immediately after each task, examiners will note participant comments, visible hesitation, and emotional reactions (e.g., confusion, satisfaction, surprise). At the end of the session, participants will complete a short post-test questionnaire rating:</p>
+    <ul>
+      <li>Ease of use</li>
+      <li>Visual clarity of feedback</li>
+      <li>Comfort level of brightness</li>
+      <li>Understanding of mode transitions</li>
+    </ul>
+    <p>(using a 5-point Likert scale)</p>
+
+    <!-- Optional: blank log table in page style -->
+    <h4 style="margin-top:12px">Standard Observation Sheet (Blank)</h4>
+    <table>
+      <tr>
+        <th>Participant ID</th>
+        <th>Task #</th>
+        <th>Time (s)</th>
+        <th>Errors</th>
+        <th>Assistance</th>
+        <th>Success (Y/N)</th>
+        <th>Interpretation Accuracy</th>
+        <th>Notes</th>
+      </tr>
+      <tr><td></td><td></td><td></td><td></td><td>None / Minimal / Major</td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td>None / Minimal / Major</td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td>None / Minimal / Major</td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <!-- 2. Reporting Format to the Design Team -->
+  <div class="section" style="margin-top:16px">
+    <h3>2. Reporting Format to the Design Team</h3>
+    <p>After data collection, examiners will summarize findings for each participant and consolidate results across all sessions into a Usability Evaluation Report that includes:</p>
+
+    <table>
+      <tr>
+        <th>Section</th>
+        <th>Content</th>
+      </tr>
+      <tr>
+        <td>Overview</td>
+        <td>Testing setup, number of participants, task order, environment description.</td>
+      </tr>
+      <tr>
+        <td>Quantitative Results</td>
+        <td>Average completion times, error rates, success rates per task, visualized via tables or bar charts.</td>
+      </tr>
+      <tr>
+        <td>Qualitative Observations</td>
+        <td>Key behavioral notes, recurring confusions (e.g., misinterpreted weather color), user quotes.</td>
+      </tr>
+      <tr>
+        <td>Usability Goal Assessment</td>
+        <td>Each task evaluated against goals (ease, efficiency, learnability, comfort).</td>
+      </tr>
+      <tr>
+        <td>Key Insights &amp; Recommendations</td>
+        <td>Design implications such as improving color cue contrast, clarifying mode transitions, or enhancing knob responsiveness.</td>
+      </tr>
+    </table>
+
+    <p>The final report will be submitted to the Calm-Tech Lamp design team as a written summary (PDF or DOCX) accompanied by:</p>
+    <ul>
+      <li>Annotated screenshots or short clips of notable interactions</li>
+      <li>A prioritized list of usability issues (High, Medium, Low severity)</li>
+      <li>Proposed next steps (e.g., prototype refinements or follow-up tests)</li>
+    </ul>
+  </div>
+
+  <!-- 3. Design Team Expectations & Implications -->
+  <div class="section" style="margin-top:16px">
+    <h3>3. Design Team Expectations &amp; Implications</h3>
+    <p><strong>The design team expects:</strong></p>
+    <ul>
+      <li>Complete transparency in how users interact without assistance.</li>
+      <li>Actionable feedback directly linked to the usability goals (ease, efficiency, satisfaction, comfort).</li>
+      <li>Clear evidence for each recommendation (supported by metrics or observed patterns).</li>
+    </ul>
+
+    <p><strong>Outcomes from this evaluation will directly inform the next design iteration, particularly adjustments to:</strong></p>
+    <ul>
+      <li>Color transitions and calm feedback timing</li>
+      <li>Pomodoro cycle cues and transitions</li>
+      <li>Interface responsiveness for time and brightness controls</li>
+      <li>Clarity of weather indication and permission prompts</li>
+    </ul>
+  </div>
+
+</section>
+
+
   </main>
 
   <footer>© <span id="yr"></span> ECSE 424 Group J • Calm Tech Lamp</footer>
