@@ -43,11 +43,436 @@
   </header>
 
   <main>
-    <h1>Formative Feedback</h1>
-    <section class="section">
-      <p>Coming soon.</p>
-    </section>
-  </main>
+  <!-- Testing Results and Analysis -->
+  <section class="section">
+    <h2>Testing Results and Analysis</h2>
+
+    <!-- Result Summary -->
+    <div class="section" style="margin-top:12px">
+      <h3>Result Summary</h3>
+      <p>
+        Across all completed test sessions, participants were able to work through the three benchmark tasks —
+        <em>Spotlight Focus</em>, <em>Heatmap Tracking</em>, and <em>Adaptive Bandwidth</em> — without external guidance, though each task revealed distinct points of hesitation.
+        Overall task completion was successful, and participants consistently rated clarity, comfort, and efficiency above 4 on the 1–5 scale.
+        <strong>Adaptive ON</strong> mode generally improved perceived clarity and stability, with users noting smoother transitions and more focused visual feedback.
+        However, participants struggled to locate key controls (especially the Spotlight feedback and Bandwidth Monitor toggle), experienced uncertainty when task timers disappeared,
+        and occasionally misinterpreted visual feedback. These findings indicate that while the prototype is functional and promising, improvements are needed to reinforce visibility,
+        feedback clarity, and user control across tasks.
+      </p>
+    </div>
+
+    <!-- Quantitative Data Tables -->
+    <div class="section" style="margin-top:12px">
+      <h3>Quantitative Data</h3>
+
+      <!-- Task 1 - Spotlight -->
+      <h4>Task 1 – Spotlight</h4>
+      <table>
+        <tr>
+          <th>Metric</th><th>P1</th><th>P2</th><th>P3</th><th>Avg</th>
+        </tr>
+        <tr>
+          <td>T1-1 Time to locate spotlight (sec)</td><td>9</td><td>5</td><td>5</td><td>6.33</td>
+        </tr>
+        <tr>
+          <td>T1-2 Time to adjust radius (sec)</td><td>3</td><td>8</td><td>10.35</td><td>7.12</td>
+        </tr>
+        <tr>
+          <td>T1-3 Errors</td><td>1</td><td>1</td><td>1</td><td>7.1</td>
+        </tr>
+        <tr>
+          <td>T1-4 Comfort rating</td><td>4</td><td>4</td><td>4</td><td>4</td>
+        </tr>
+        <tr>
+          <td>T1-5 Clarity rating</td><td>4</td><td>4</td><td>4</td><td>4</td>
+        </tr>
+      </table>
+
+      <!-- Task 2 - Heatmap -->
+      <h4 style="margin-top:18px">Task 2 – Heatmap</h4>
+      <table>
+        <tr>
+          <th>Metric</th><th>P1</th><th>P2</th><th>P3</th><th>Avg</th>
+        </tr>
+        <tr>
+          <td>T2-1 Time to start (sec)</td><td>45</td><td>45</td><td>45</td><td>45</td>
+        </tr>
+        <tr>
+          <td>T2-2 Score / Hits</td><td>51</td><td>50</td><td>62</td><td>54.33</td>
+        </tr>
+        <tr>
+          <td>T2-3 Errors</td><td>5</td><td>2</td><td>0</td><td>2.33</td>
+        </tr>
+        <tr>
+          <td>T2-4 Travel distance / jumps</td><td>51</td><td>50</td><td>62</td><td>54.33</td>
+        </tr>
+        <tr>
+          <td>T2-5 Fixation density (L/M/H)</td><td>H</td><td>H</td><td>H</td><td>H</td>
+        </tr>
+        <tr>
+          <td>T2-6 Clarity rating</td><td>5</td><td>5</td><td>5</td><td>5</td>
+        </tr>
+      </table>
+
+      <!-- Task 3 - Adaptive Bandwidth -->
+      <h4 style="margin-top:18px">Task 3 – Adaptive Bandwidth</h4>
+      <table>
+        <tr>
+          <th>Metric</th><th>P1</th><th>P2</th><th>P3</th><th>Avg</th>
+        </tr>
+        <tr>
+          <td>T3-1 Time to find Adaptive ON/OFF (sec)</td><td>2</td><td>3</td><td>2</td><td>2.33</td>
+        </tr>
+        <tr>
+          <td>T3-2 Recovery time (ms)</td><td>48.4</td><td>123.5</td><td>37.82</td><td>69.9</td>
+        </tr>
+        <tr>
+          <td>T3-3 Stability rating</td><td>5</td><td>5</td><td>5</td><td>5</td>
+        </tr>
+        <tr>
+          <td>T3-4 Awareness rating</td><td>5</td><td>5</td><td>5</td><td>5</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Qualitative Data -->
+    <div class="section" style="margin-top:12px">
+      <h3>Qualitative Data</h3>
+
+      <h4>Observation 1 — Confusion locating the Focus Settings area (Task 1)</h4>
+      <p><strong>User Quote:</strong> “Where is the spotlight? Is it working?”</p>
+      <p>
+        The participant hesitated when attempting to adjust the focus settings. After enabling the spotlight, they expected the focus indicator to appear directly under the cursor.
+        Because the cursor remained inside the settings drawer, they did not immediately notice that the spotlight effect appeared on the video area.
+      </p>
+
+      <h4>Observation 2 — Uncertainty about tracking task duration (Task 2)</h4>
+      <p><strong>User Quote:</strong> “I can’t tell if it ran for 30 or 45 seconds.”</p>
+      <p>
+        After completing the heatmap tracking task, the “Time” display disappeared. The participant could not confirm whether the system ran for the intended duration (30s vs 45s)
+        and expressed uncertainty whether the duration input was applied.
+      </p>
+      <div class="imgbox">
+        <img src="assets/Rain.PNG" alt="Rainy weather cue"
+             style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+        <p style="font-size:14px;color:#9fb0d1;margin-top:4px;text-align:center;">Rainy Weather</p>
+      </div>
+
+      <h4>Observation 3 — Difficulty finding the Bandwidth Monitor toggle (Task 3)</h4>
+      <p><strong>User Quote:</strong> “I can’t see the bandwidth toggle at all.”</p>
+      <p>
+        The participant enabled “Adaptive ON” and simulated a network fluctuation but could not easily locate the “Show bandwidth monitor” toggle.
+        Because the toggle defaulted to Off, they could not see any bandwidth visualization or recovery behavior.
+      </p>
+      <div class="imgbox">
+        <img src="assets/Rain.PNG" alt="Rainy weather cue"
+             style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+        <p style="font-size:14px;color:#9fb0d1;margin-top:4px;text-align:center;">Rainy Weather</p>
+      </div>
+
+      <h4>Observation 4 — Ambiguity in Spotlight Blur Strength (Task 1)</h4>
+      <p><strong>User Quote:</strong> “Is the blur stronger now, or is it the same?”</p>
+      <p>
+        The participant adjusted the blur radius slider but did not perceive a clear change in blur intensity. The subtle transition made it difficult to interpret whether the adjustment was applied.
+      </p>
+
+      <h4>Observation 5 — Unclear Transition Between Heatmap States (Task 2)</h4>
+      <p><strong>User Quote:</strong> “Did it start? I don’t see anything happening yet.”</p>
+      <p>
+        After clicking “Start Task,” the participant was unsure whether heatmap recording had begun, because the interface provided minimal visual or temporal cues.
+      </p>
+
+      <h4>Observation 6 — Misinterpretation of Adaptive ON/OFF State (Task 3)</h4>
+      <p><strong>User Quote:</strong> “I thought it didn’t switch… oh wait, it did?”</p>
+      <p>
+        One participant toggled Adaptive ON but did not notice the subtle badge change in the interface and assumed the system was still OFF. Low contrast contributed to misinterpreting the system’s adaptive state.
+      </p>
+    </div>
+
+    <!-- Participant Comparison -->
+    <div class="section" style="margin-top:12px">
+      <h3>Participant Comparison</h3>
+      <p>
+        Across participants, several patterns emerged. All users successfully activated Adaptive ON/OFF modes but hesitated when interpreting the spotlight’s visual behavior, indicating a consistent visibility issue.
+        Participant 1 struggled the most with discovering the Bandwidth Monitor toggle, while others located it more quickly but still felt it was visually deprioritized.
+        All users expressed uncertainty when the heatmap timer disappeared at the end of Task 2, showing that feedback clarity issues affected every participant.
+        Comfort and clarity ratings remained uniformly high (4–5/5), but confusion moments occurred at similar stages across users, suggesting systemic interface problems rather than individual differences.
+      </p>
+    </div>
+
+    <!-- Prioritized Usability Issue List -->
+    <div class="section" style="margin-top:12px">
+      <h3>Prioritized Usability Issue List</h3>
+
+      <h4>High Priority Issues</h4>
+      <table>
+        <tr>
+          <th>Issue ID</th><th>Usability Issue</th><th>Heuristic Violated</th>
+          <th>Severity (0–4)</th><th>Problem Description</th><th>Impact on User</th><th>Proposed Fix</th>
+        </tr>
+        <tr>
+          <td>UI-2</td>
+          <td>Timer disappears after completing heatmap task</td>
+          <td>Feedback &amp; Clarity of Results</td>
+          <td>3 — Major issue</td>
+          <td>The timer vanishes after the task ends, leaving users unsure whether the configured duration (30s/45s) was applied.</td>
+          <td>Reduces trust; users doubt whether the task executed correctly; weakens learnability.</td>
+          <td>Keep final time displayed until reset; add a “Task Completed” confirmation state.</td>
+        </tr>
+        <tr>
+          <td>UI-6</td>
+          <td>Misinterpretation of Adaptive ON/OFF state</td>
+          <td>Visibility of System Status</td>
+          <td>3 — Major issue</td>
+          <td>Low-contrast or subtle badge change makes users think Adaptive mode didn’t switch.</td>
+          <td>Users believe the system is unresponsive; reduces awareness of adaptive behavior.</td>
+          <td>Increase badge contrast; add an animation or sound cue for mode switching.</td>
+        </tr>
+      </table>
+
+      <h4 style="margin-top:16px">Medium Priority Issues</h4>
+      <table>
+        <tr>
+          <th>Issue ID</th><th>Usability Issue</th><th>Heuristic Violated</th>
+          <th>Severity (0–4)</th><th>Problem Description</th><th>Impact on User</th><th>Proposed Fix</th>
+        </tr>
+        <tr>
+          <td>UI-1</td>
+          <td>Spotlight feedback appears outside the user’s focal area</td>
+          <td>Visibility of System Status</td>
+          <td>2 — Minor issue</td>
+          <td>Spotlight activates on the video area while the cursor remains in the drawer, causing users to think nothing is happening.</td>
+          <td>Causes hesitation and confusion; disrupts mental model of spotlight behavior.</td>
+          <td>Dim the drawer when spotlight activates or show a small spotlight preview in the panel.</td>
+        </tr>
+        <tr>
+          <td>UI-4</td>
+          <td>Ambiguity in spotlight blur strength</td>
+          <td>Feedback &amp; Clarity of Results</td>
+          <td>2 — Minor issue</td>
+          <td>Blur radius adjustment is subtle and users cannot easily perceive change.</td>
+          <td>Users question whether the blur setting applied; reduces confidence in controls.</td>
+          <td>Increase blur-change intensity or show a real-time preview of blur strength.</td>
+        </tr>
+      </table>
+
+      <h4 style="margin-top:16px">Low Priority Issues</h4>
+      <table>
+        <tr>
+          <th>Issue ID</th><th>Usability Issue</th><th>Heuristic Violated</th>
+          <th>Severity (0–4)</th><th>Problem Description</th><th>Impact on User</th><th>Proposed Fix</th>
+        </tr>
+        <tr>
+          <td>UI-3</td>
+          <td>Bandwidth Monitor toggle is difficult to find</td>
+          <td>User Control &amp; Freedom; Visibility of System Status</td>
+          <td>1 — Cosmetic issue</td>
+          <td>The “Show bandwidth monitor” toggle is buried and defaults to Off, making users unaware it exists.</td>
+          <td>Prevents meaningful evaluation of bandwidth behavior; reduces adaptive awareness.</td>
+          <td>Move toggle near Adaptive ON/OFF or auto-enable during fluctuation tests.</td>
+        </tr>
+        <tr>
+          <td>UI-5</td>
+          <td>Unclear transition into active heatmap recording</td>
+          <td>Visibility of System Status</td>
+          <td>1 — Cosmetic issue</td>
+          <td>Minimal visual cues make it unclear whether heatmap tracking has started.</td>
+          <td>Causes confusion at task start; delays interaction.</td>
+          <td>Add countdown, flash indicator, or sound cue when recording begins.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Recording and Reporting (image placeholders) -->
+    <div class="section" style="margin-top:12px">
+      <h3>Recording and Reporting</h3>
+      <div class="grid">
+        <div class="imgbox">Generate heatmap - P1 (Off)</div>
+        <div class="imgbox">Generate heatmap - P1 (On)</div>
+        <div class="imgbox">Generate heatmap - P2</div>
+        <div class="imgbox">Generate heatmap - P3</div>
+        <div class="imgbox">Bandwidth graph - P1 (Off)</div>
+        <div class="imgbox">Bandwidth graph - P1 (On)</div>
+        <div class="imgbox">Bandwidth graph - P2 (Off)</div>
+        <div class="imgbox">Bandwidth graph - P2 (On)</div>
+        <div class="imgbox">Bandwidth graph - P3 (Off)</div>
+        <div class="imgbox">Bandwidth graph - P3 (On)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Recommendation -->
+<section class="section">
+  <h2>Design Critique</h2>
+    <div class="section" style="margin-top:12px">
+      <h3>Design Recommendation</h3>
+      <p>
+        Provide more immediate and localized feedback for the Spotlight Focus module (e.g., a fading outline or miniature preview inside the drawer).
+        Keep the heatmap timer visible after task completion until manually reset, reinforcing system feedback and duration confirmation.
+        Increase visibility of the Bandwidth Monitor toggle by placing it next to Adaptive ON/OFF or auto-enabling it when fluctuations are simulated.
+        Additional refinements include higher-contrast status badges, subtle animations for state changes, and clearer grouping of related controls.
+      </p>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="section" style="margin-top:12px">
+      <h3>Conclusion</h3>
+      <p>
+        The evaluation shows that adaptive features enhance visual clarity, comfort, and user awareness when activated; participants completed all benchmark tasks and reported high satisfaction.
+        Recurring confusion—feedback visibility, toggle discoverability, and disappearance of task indicators—highlights areas for refinement.
+        Addressing these issues will improve alignment with usability goals, strengthen learnability, and yield clearer, more intuitive interactions for future iterations.
+      </p>
+    </div>
+
+    <p style="margin-top:6px;font-size:12px;color:#8ea1c9">:contentReference[oaicite:0]{index=0}</p>
+  </section>
+
+  <section class="section">
+  <h2>Test Plan Critique</h2>
+
+  <div class="section" style="margin-top:12px">
+    <h3>I. Low-Fidelity Prototype: Concept Validation and Direction Exploration</h3>
+    <p>
+      After comparing Team K’s Low-Fidelity Prototype and subsequent Computer Prototype test plans, we believe that both maintained a clear usability-oriented framework, yet the latter significantly expanded the depth and precision of its evaluation metrics. 
+      Overall, both stages remained closely aligned with the core design objective — enhancing user focus and system transparency through gaze-driven video interaction — but the computer-based version refined its measurement definitions, data collection methods, 
+      and feedback mechanisms to better reflect real-world use scenarios.
+    </p>
+    <p>
+      The low-fidelity test plan primarily focused on concept comprehension and feasibility validation. Its benchmark tasks were centered around:
+    </p>
+    <ul>
+      <li>Experiencing gaze-adaptive focus (Gaze-Adaptive Player)</li>
+      <li>Interpreting the attention heatmap (Attention Heatmap Dashboard)</li>
+      <li>Understanding the adaptive bandwidth controller</li>
+      <li>Assessing visual comfort and transition smoothness</li>
+    </ul>
+    <p>
+      These tasks directly corresponded to the six usability goals defined by the team — <em>Ease of Use, Efficiency, Accuracy, Calm Technology Adherence, Utility,</em> and <em>Satisfaction</em> — demonstrating strong completeness and goal alignment.
+    </p>
+    <p>
+      However, this stage emphasized subjective feedback and verbal description. Data were limited to task success rate, average completion time, and Likert-scale satisfaction scores, 
+      without precise measurement of dynamic response behaviors. Because the Wizard-of-Oz technique relied on manual system simulation, it was impossible to evaluate real system latency, 
+      recovery time, or visual continuity — metrics essential for later implementation.
+    </p>
+    <p>
+      Nevertheless, this early testing effectively verified the intelligibility and potential value of the design concept, providing valuable qualitative evidence for subsequent prototype development.
+    </p>
+  </div>
+
+  <div class="section" style="margin-top:12px">
+    <h3>II. Computer Prototype: Usability Verification and Performance Quantification</h3>
+    <p>
+      At the computer prototype stage, the test plan became considerably more systematic. 
+      While it retained the original three core functional modules, its measurement approach shifted from “observation + subjective rating” to “quantitative recording + automated feedback.”
+    </p>
+    <ul>
+      <li>
+        In Task 1 (Spotlight Focus), time-to-locate and error counts were added to measure how quickly users found and adjusted the focus control.
+      </li>
+      <li>
+        In Task 2 (Heatmap Tracking), task duration, score, error frequency, and fixation density level were recorded.
+      </li>
+      <li>
+        In Task 3 (Adaptive Bandwidth), a new Recovery Time (ms) metric was introduced to quantify how long the system took to transition from Buffering to Stable.
+      </li>
+    </ul>
+    <p>
+      Additionally, <em>Clarity Rating</em> and <em>Stability Rating</em> were included as subjective indicators, preserving the human-perception dimension while improving objectivity. 
+      These refinements significantly enhanced the measurement depth and scientific rigor of the evaluation, compensating for the low-fidelity stage’s inability to capture live performance variations.
+    </p>
+  </div>
+
+  <div class="section" style="margin-top:12px">
+    <h3>III. Comparative Analysis and Improvements</h3>
+    <table>
+      <tr>
+        <th>Aspect</th>
+        <th>Low-Fidelity Prototype</th>
+        <th>Computer Prototype</th>
+        <th>Improvement & Outcome</th>
+      </tr>
+      <tr>
+        <td>Testing Goals</td>
+        <td>Validate conceptual understanding, collect early feedback</td>
+        <td>Assess real system response and usability performance</td>
+        <td>Shift from qualitative to quantitative, covering broader interaction metrics</td>
+      </tr>
+      <tr>
+        <td>Task Coverage</td>
+        <td>Four core tasks focused on perception</td>
+        <td>Three core tasks focusing on performance and efficiency</td>
+        <td>Retained key functions while strengthening operational measurement</td>
+      </tr>
+      <tr>
+        <td>Data Type</td>
+        <td>Mainly subjective ratings and observation notes</td>
+        <td>Added numerical data: time, error rate, system response</td>
+        <td>Increased reliability and comparability</td>
+      </tr>
+      <tr>
+        <td>Feedback Mechanism</td>
+        <td>Manual simulation and written records</td>
+        <td>Automated interaction with OLED display and console logging</td>
+        <td>More realistic and consistent feedback</td>
+      </tr>
+      <tr>
+        <td>User Sample</td>
+        <td>2 internal graduate students</td>
+        <td>3 real participants from target user group</td>
+        <td>Improved diversity and representativeness</td>
+      </tr>
+    </table>
+    <p>
+      During our evaluation of the computer prototype, we also made several extensions to the original test plan:
+    </p>
+    <ul>
+      <li>Added quantitative performance metrics, such as Recovery Time (ms), to objectively assess system responsiveness.</li>
+      <li>Introduced error statistics to track user mistakes and analyze the learning curve.</li>
+      <li>Refined task instructions and segmented timing to minimize inter-task interference and improve data consistency.</li>
+      <li>Retained and strengthened comfort and satisfaction questionnaires for cross-stage comparability.</li>
+    </ul>
+  </div>
+
+  <div class="section" style="margin-top:12px">
+    <h3>IV. Evaluation of Alignment and Completeness</h3>
+    <p>
+      Overall, Team K’s two test plans demonstrate a coherent evolutionary chain: 
+      the low-fidelity prototype validated the perceptibility of the design concept, while the computer prototype verified the usability and stability of the actual interaction.
+    </p>
+    <p>
+      Throughout both stages, their selected evaluation metrics consistently mapped onto the stated usability goals:
+    </p>
+    <ul>
+      <li><strong>Ease of Use</strong> → task completion time and error rate</li>
+      <li><strong>Efficiency</strong> → average task duration and heatmap interpretation speed</li>
+      <li><strong>Accuracy</strong> → ROI detection versus user-reported gaze point</li>
+      <li><strong>Calm Technology Adherence</strong> → qualitative comfort feedback</li>
+      <li><strong>Utility</strong> → perceived value and willingness-to-use ratings</li>
+      <li><strong>Satisfaction</strong> → overall Likert score</li>
+    </ul>
+    <p>
+      This one-to-one correspondence confirms that the evaluation plan was structurally complete and logically consistent. 
+      Compared to the low-fidelity testing, the computer prototype assessment achieved stronger alignment between system objectives, evaluation metrics, and collected user experience data, 
+      providing more actionable insight for design refinement.
+    </p>
+  </div>
+
+  <div class="section" style="margin-top:12px">
+    <h3>V. Summary</h3>
+    <p>
+      In summary, Team K’s two-stage test plans illustrate a clear progression from exploratory validation to experimental verification. 
+      The low-fidelity tests helped them confirm design direction and user comprehension, while the computer-based tests used precise measurements and multi-dimensional data to quantify usability performance. 
+      This iterative evaluation strategy exemplifies the “design–test–redesign” cycle central to Human–Computer Interaction research.
+    </p>
+    <p>
+      Future iterations could further enhance validity by expanding the participant pool, integrating true gaze-tracking inputs, and testing in longer, more naturalistic usage sessions — ultimately yielding even stronger evidence of the system’s real-world applicability.
+    </p>
+  </div>
+</section>
+
+  
+</main>
+
 
   <footer>© <span id="yr"></span> ECSE 424 Group J • Calm Tech Lamp</footer>
 </div>
