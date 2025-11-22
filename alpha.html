@@ -47,13 +47,10 @@
   <h2>Design Evolution (From Computer Prototype to Alpha Physical System)</h2>
 
   <p>
-    Following the formative evaluation of our computer prototype, several usability and functionality
-    issues were identified by the evaluators (Group H) in their formative feedback. The feedback centered on
-    difficulties with precise time adjustment, unclear mode transitions, confusing weather color mappings, and
-    ambiguous wording in controls. We incorporated these findings into the development of our physical alpha
-    prototype, resulting in significant design evolution across interaction models, feedback systems, and feature
-    architecture. Below we outline the major design changes, each justified through usability or feasibility principles.
-  </p>
+    Following the formative evaluation of our computer prototype, several usability and functionality issues were identified by the evaluators (Group H) Formative Feedback. Their feedback centered on difficulties with precise time adjustment, unclear mode transitions, confusing weather color mappings, and ambiguous wording in controls. We incorporated these findings into the development of our physical alpha prototype, resulting in significant design evolution across interaction models, feedback systems, and feature architecture.
+ </p>
+ <p>Below, we outline the major design changes, each justified through usability or feasibility principles.
+</p>
 
   <div class="section" style="margin-top:12px">
     <h3>1. Replacing On-Screen Timer Adjustment with Physical Rotation Gesture</h3>
@@ -258,15 +255,10 @@ WiFi FAIL
   <div class="section" style="margin-top:12px">
     <h3>1. Introduction</h3>
     <p>
-      The Smart Lamp is designed as an intuitive, sensor-driven lighting system that blends
-      environmental awareness with natural physical interaction. The lamp integrates an ESP32
-      microcontroller, an MPU6050 motion-tracking module, an OLED screen, and a set of coloured
-      LEDs that reflect real-time weather conditions.
+      The Smart Lamp is designed as an intuitive, sensor-driven lighting system that blends environmental awareness with natural physical interaction. The lamp integrates an ESP32 microcontroller, an MPU6050 motion-tracking module, an OLED screen, and a set of coloured LEDs that reflect real-time weather conditions. Together, these components create a unified experience where lighting, ambient information, and time-management tools are seamlessly combined into a single object.
     </p>
     <p>
-      This guide explains how to assemble, install, and configure the lamp so that it can operate
-      independently once powered. It covers Wi-Fi setup, gesture calibration, interpreting visual
-      cues, and safe usage instructions.
+      This guide explains how to assemble, install, and configure the lamp so that it can operate independently once powered. It walks the user through wiring the sensors and indicators, connecting to Wi-Fi for weather updates, calibrating physical controls such as tilt-based brightness adjustment and rotation-based timer setting, and interpreting the visual cues displayed on both the OLED and the coloured LEDs. Whether the lamp is used as a daily lighting companion, a subtle weather notifier, or a tactile Pomodoro timer, this guide ensures that users can set it up safely and begin interacting with it immediately and confidently.
     </p>
   </div>
 
@@ -316,6 +308,7 @@ const char* WIFI_PWD  = "Your WiFi Password";
   <div class="section">
     <h3>4. Weather Indicator LEDs</h3>
     <p>The lamp fetches real-time weather via the Open-Meteo API every 30 seconds.</p>
+    <p> It categorizes the weather into four intuitive groups:</p>
 
     <table>
       <tr>
@@ -349,11 +342,14 @@ const char* WIFI_PWD  = "Your WiFi Password";
         <td>Precipitation</td>
       </tr>
     </table>
+
+    <p>These LEDs update automatically with the weather.</p>
   </div>
 
   <!-- 5. Brightness Control -->
   <div class="section">
     <h3>5. Tilt-Based Brightness Control</h3>
+    <p>The brightness of the main LED can be adjusted simply by tilting the lamp:</p>
     <ul>
       <li>Tilt right → brightness increases</li>
       <li>Tilt left → brightness decreases</li>
@@ -366,10 +362,13 @@ const char* WIFI_PWD  = "Your WiFi Password";
   <!-- 6. Pomodoro Timer -->
   <div class="section">
     <h3>6. Rotation-Based Pomodoro Timer</h3>
+    <p>The lamp includes an intuitive gesture-based timer, operating like a physical kitchen timer.</p>
 
     <h4 style="margin-top:10px">6.1 Entering Timer Setting Mode</h4>
-    <p>Rotate the lamp anticlockwise. OLED shows: <strong>SET xx min</strong></p>
-
+    <p>Rotate the lamp anticlockwise. OLED shows:</p>
+<pre style="background:#0e1116;border:1px solid #2a3140;padding:12px;border-radius:8px;color:#cfe0ff;">
+SET xx min
+  </pre>
     <h4 style="margin-top:10px">6.2 Setting the Duration</h4>
     <ul>
       <li>360° rotation = 60 minutes</li>
@@ -379,25 +378,34 @@ const char* WIFI_PWD  = "Your WiFi Password";
     <p>After 1.5 seconds of stillness, the value locks and the timer begins.</p>
 
     <h4 style="margin-top:10px">6.3 Timer Running</h4>
-    <p>OLED shows <strong>TMR mm:ss</strong>.</p>
+    <p>OLED shows</p> 
+    <pre style="background:#0e1116;border:1px solid #2a3140;padding:12px;border-radius:8px;color:#cfe0ff;">
+TMR mm:ss
+  </pre>
     <p>At completion, the main LED flashes twice.</p>
   </div>
 
   <!-- 7. Shake to Reset -->
   <div class="section">
     <h3>7. Shake-to-Reset Gesture</h3>
+    <p>To immediately cancel the timer:</p>
     <ul>
       <li>Shake lamp vigorously</li>
-      <li>Sensor detects ≥0.5g acceleration or ≥180°/s rotation</li>
+      <li>MPU6050 Sensor detects: ≥0.5g acceleration or ≥180°/s rotation</li>
       <li>After 3 hits → timer resets</li>
     </ul>
-    <p>The main LED flashes twice when reset is triggered.</p>
+    <p>The main LED flashes will</p>
+    <ul>
+      <li>Flash twice</li>
+      <li>Return to previous brightness level</li>
+    </ul>
+    <p>Shake detection has a brief cooldown (1.2 seconds) to prevent accidental triggers.</p>
   </div>
 
   <!-- 8. OLED Info Display -->
   <div class="section">
     <h3>8. OLED Information Display</h3>
-
+    <p>The OLED shows the following real-time information:</p>
     <table>
       <tr><th>Line</th><th>Content</th></tr>
       <tr><td>1</td><td>City name</td></tr>
