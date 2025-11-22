@@ -43,10 +43,450 @@
   </header>
 
   <main>
-    <h1>Alpha System</h1>
     <section class="section">
-      <p>Coming soon.</p>
-    </section>
+  <h2>Design Evolution (From Computer Prototype to Alpha Physical System)</h2>
+
+  <p>
+    Following the formative evaluation of our computer prototype, several usability and functionality
+    issues were identified by the evaluators (Group H) in their formative feedback. The feedback centered on
+    difficulties with precise time adjustment, unclear mode transitions, confusing weather color mappings, and
+    ambiguous wording in controls. We incorporated these findings into the development of our physical alpha
+    prototype, resulting in significant design evolution across interaction models, feedback systems, and feature
+    architecture. Below we outline the major design changes, each justified through usability or feasibility principles.
+  </p>
+
+  <div class="section" style="margin-top:12px">
+    <h3>1. Replacing On-Screen Timer Adjustment with Physical Rotation Gesture</h3>
+    <p><strong>Feedback prompting change:</strong> Users had difficulty setting an exact duration, describing it as “complicated” and imprecise.</p>
+    <p><strong>Revision implemented:</strong> Removed the digital slider and implemented a physical rotation gesture using the MPU6050 gyroscope.  
+      Rotating the lamp now sets timer duration (30° = 5 minutes). The OLED displays “SET xx min” and locks after 1.5 seconds of stillness.</p>
+    <p><strong>Usability justification:</strong> Eliminates fine-motor precision issues and aligns with the familiar “twisting a kitchen timer” model, improving learnability and reducing cognitive load.</p>
+    <p><strong>Feasibility justification:</strong> The MPU6050 already provides angular velocity data; rotational mapping requires no new hardware.</p>
+  </div>
+
+  <div class="section">
+    <h3>2. Fixing Confusion in Mode Transitions with a Clear OLED Status System</h3>
+    <p><strong>Feedback prompting change:</strong> Participants struggled to interpret transitions between Focus and Break modes and failed the Pomodoro benchmark due to no automatic break start.</p>
+    <p><strong>Revision implemented:</strong> Redesigned state visibility with a unified OLED display: explicit states (“SET xx min,” “TMR mm:ss,” “TMR --:--”), automatic transition to timer-running, and double LED flash on completion.</p>
+    <p><strong>Usability justification:</strong> Improves visibility of system status and resolves confusion observed during usability testing.</p>
+    <p><strong>Feasibility justification:</strong> Text updates on OLED are lightweight and require minimal memory.</p>
+  </div>
+
+  <div class="section">
+    <h3>3. Replacing Color-Coded Weather Interface with Clear LEDs + Descriptive Text</h3>
+    <p><strong>Feedback prompting change:</strong> Users misinterpreted weather colors in the digital prototype.</p>
+    <p><strong>Revision implemented:</strong> Introduced 4 fixed LED colors (Sunny, Cloudy/Fog, Windy, Rain/Snow) and OLED text displaying temperature, humidity, and next-hour forecast, updating every 30 seconds.</p>
+    <p><strong>Usability justification:</strong> Eliminates the need to memorize color mappings; provides both ambient cues and explicit text for clarity.</p>
+    <p><strong>Feasibility justification:</strong> Mapping to 4 categories simplified logic and reduced firmware complexity.</p>
+  </div>
+
+  <div class="section">
+    <h3>4. Eliminating Text-Based Weather Simulation and Using Real Data Only</h3>
+    <p><strong>Feedback prompting change:</strong> The “Apply Future” button was unclear and caused hesitation.</p>
+    <p><strong>Revision implemented:</strong> Removed simulated future weather controls; the alpha prototype now fetches real data from Open-Meteo and removes ambiguous interactions.</p>
+    <p><strong>Usability justification:</strong> Reduces feature ambiguity and cognitive overhead.</p>
+    <p><strong>Feasibility justification:</strong> Uses ESP32 Wi-Fi capabilities to obtain live data, reducing UI complexity.</p>
+  </div>
+
+  <div class="section">
+    <h3>5. Removing Mode-Switching UI and Replacing It with Always-Available Physical Interactions</h3>
+    <p><strong>Feedback prompting change:</strong> Participants hesitated when switching modes (Weather / Focus / Break) and found it confusing.</p>
+    <p><strong>Revision implemented:</strong> Eliminated digital mode switching.  
+      Weather display is always on; brightness is controlled via tilt; timer activates automatically when rotated.</p>
+    <p><strong>Usability justification:</strong> Physical behavior replaces conceptual modes, making functionality transparent and reducing navigation requirements.</p>
+    <p><strong>Feasibility justification:</strong> Simplified OLED interface and firmware state machine.</p>
+  </div>
+
+  <div class="section">
+    <h3>6. Replacing GUI Brightness Slider with Tilt-Based Gesture Control</h3>
+    <p><strong>Feedback prompting change:</strong> Evaluators suggested linking brightness control directly to the lamp’s physical movement.</p>
+    <p><strong>Revision implemented:</strong> Tilt gestures now adjust brightness across 6 levels (0–5); OLED shows “Lvl: 0–5.”</p>
+    <p><strong>Usability justification:</strong> Physical interaction creates immediacy and eliminates digital precision issues.</p>
+    <p><strong>Feasibility justification:</strong> Uses existing accelerometer roll angle; no extra components required.</p>
+  </div>
+
+  <div class="section">
+    <h3>7. Adding Shake-to-Reset to Improve Error Recovery</h3>
+    <p><strong>Feedback prompting change:</strong> Users struggled with restarts and recovery after incorrect settings; evaluators highlighted the need for better error prevention and recovery.</p>
+    <p><strong>Revision implemented:</strong> Added a shake-based reset gesture: 0.5 g or &gt;180°/s triggers hit detection; 3 hits = full timer cancel; LED flashes twice.</p>
+    <p><strong>Usability justification:</strong> Supports Nielsen’s User Control & Freedom principle by providing a physical escape action.</p>
+    <p><strong>Feasibility justification:</strong> Relies on existing MPU6050 data; no hardware changes required.</p>
+  </div>
+
+  <div class="section" style="margin-top:12px">
+    <h3>Summary of Impact</h3>
+    <p>
+      Integrating formative feedback into the alpha prototype shifted the lamp from a screen-based digital interface to a sensor-driven physical device, resolving nearly all issues found in usability testing:
+    </p>
+    <ul>
+      <li>Difficulty setting precise times</li>
+      <li>Unclear transitions between modes</li>
+      <li>Unintuitive weather color codes</li>
+      <li>Ambiguous wording in controls</li>
+      <li>Mode navigation hesitation</li>
+    </ul>
+    <p>
+      This evolution produced a more natural, intuitive, and feasible design that leverages physical interaction rather than GUI-based control.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Prototype Revisions</h2>
+
+  <!-- Final alpha prototype image -->
+  <div class="section" style="margin-top:12px">
+    <h3>Alpha Prototype Revisions</h3>
+    <div class="imgbox">
+      <!-- 
+      <img src="assets/alpha_final.jpg"
+           alt="Final alpha Calm-Tech Lamp prototype"
+           style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+      -->
+      Final alpha prototype image placeholder
+    </div>
+  </div>
+
+  <!-- Code links as buttons -->
+  <div class="section" style="margin-top:12px">
+    <h3>Lamp Code</h3>
+    <p>Below are the code packages used to implement the alpha physical lamp prototype:</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+      <a href="https://drive.google.com/file/d/1lSg7Xd3R3jq5LQEfUZwXMdltV3wfwDHZ/view?usp=drive_link"
+         target="_blank"
+         style="display:inline-block;text-decoration:none;background:var(--accent);color:#0b0d10;
+                font-weight:700;padding:10px 18px;border-radius:12px;box-shadow:0 4px 14px rgba(124,196,255,.3);">
+        ▶ Download Lamp Code (File 1)
+      </a>
+
+      <a href="https://drive.google.com/file/d/1H2dvr2gGezayH3GL5rPrv17YSTQxTPvK/view?usp=drive_link"
+         target="_blank"
+         style="display:inline-block;text-decoration:none;background:var(--accent);color:#0b0d10;
+                font-weight:700;padding:10px 18px;border-radius:12px;box-shadow:0 4px 14px rgba(124,196,255,.3);">
+        ▶ Download Lamp Code (File 2)
+      </a>
+    </div>
+  </div>
+
+  <div class="section" style="margin-top:12px">
+  <h3>Installation Guide</h3>
+
+  <p>If the WiFi is already configured and the lamp can connect normally, no installation is needed.</p>
+
+  <p>If connecting to WiFi for the first time, follow the steps below:</p>
+
+  <h4>Step 1 — Open the Source Code</h4>
+  <ol>
+    <li>Connect the ESP32 to your computer using a USB cable.</li>
+    <li>Launch the Arduino IDE (or VS Code + PlatformIO).</li>
+    <li>Open the project .ino file that contains the lamp’s firmware.</li>
+  </ol>
+
+  <p>You should see the following section in the file:</p>
+
+  <pre style="background:#0e1116;border:1px solid #2a3140;padding:12px;border-radius:8px;color:#cfe0ff;overflow-x:auto;">
+const char* WIFI_SSID = "YourNetworkName";
+const char* WIFI_PWD  = "YourPassword";
+  </pre>
+
+  <h4>Step 2 — Enter the New Wi-Fi Credentials</h4>
+  <p>Replace the existing network name and password with the new ones. Make sure:</p>
+  <ul>
+    <li>The network name is typed exactly as shown (case-sensitive)</li>
+    <li>The password is correct</li>
+    <li>The network is a 2.4 GHz Wi-Fi (ESP32 does not support 5 GHz)</li>
+  </ul>
+
+  <h4>Step 3 — Compile and Upload the Firmware</h4>
+  <ol>
+    <li>Select <strong>Tools → Board → ESP32 Dev Module</strong></li>
+    <li>Select the correct COM port</li>
+    <li>Click <strong>Upload</strong> (the right-arrow icon)</li>
+  </ol>
+
+  <p>During upload, the ESP32 may automatically reset. Wait until the IDE shows:</p>
+  <pre style="background:#0e1116;border:1px solid #2a3140;padding:12px;border-radius:8px;color:#cfe0ff;">
+Done uploading.
+  </pre>
+
+  <h4>Step 4 — Confirm Successful Connection</h4>
+  <p>After reboot, the lamp will automatically try to connect to the new Wi-Fi network.  
+     The OLED screen will show:</p>
+
+  <pre style="background:#0e1116;border:1px solid #2a3140;padding:12px;border-radius:8px;color:#cfe0ff;">
+WiFi connecting…
+  </pre>
+
+  <p>When the connection succeeds, it will display:</p>
+
+  <pre style="background:#0e1116;border:1px solid #2a3140;padding:12px;border-radius:8px;color:#cfe0ff;">
+WiFi OK
+  </pre>
+
+  <p>If the message shows:</p>
+
+  <pre style="background:#0e1116;border:1px solid #2a3140;padding:12px;border-radius:8px;color:#cfe0ff;">
+WiFi FAIL
+  </pre>
+
+  <p>then:</p>
+  <ul>
+    <li>Recheck SSID and password</li>
+    <li>Verify the network is 2.4 GHz</li>
+    <li>Move the lamp closer to the router</li>
+  </ul>
+
+  <h4>Step 5 — Weather LEDs & Display Update</h4>
+  <p>Once the lamp is connected:</p>
+  <ul>
+    <li>The weather LEDs will update according to the current weather</li>
+    <li>The OLED will show temperature, humidity, and next-hour forecast</li>
+  </ul>
+
+  <p>This confirms that the network change was applied successfully.</p>
+
+  <p>The system should work as expected (e.g., the weather LED turns <strong>blue</strong> to indicate cloudy conditions).</p>
+</div>
+
+</section>
+
+<section class="section">
+  <h2>User Manual</h2>
+
+  <!-- 1. Introduction -->
+  <div class="section" style="margin-top:12px">
+    <h3>1. Introduction</h3>
+    <p>
+      The Smart Lamp is designed as an intuitive, sensor-driven lighting system that blends
+      environmental awareness with natural physical interaction. The lamp integrates an ESP32
+      microcontroller, an MPU6050 motion-tracking module, an OLED screen, and a set of coloured
+      LEDs that reflect real-time weather conditions.
+    </p>
+    <p>
+      This guide explains how to assemble, install, and configure the lamp so that it can operate
+      independently once powered. It covers Wi-Fi setup, gesture calibration, interpreting visual
+      cues, and safe usage instructions.
+    </p>
+  </div>
+
+  <!-- 2. What's Inside the Device -->
+  <div class="section">
+    <h3>2. What’s Inside the Device</h3>
+    <ul>
+      <li>ESP32 microcontroller</li>
+      <li>MPU6050 motion sensor</li>
+      <li>SSD1306 OLED display</li>
+      <li>Main LED</li>
+      <li>Four weather indicator LEDs:
+        <ul>
+          <li>Yellow (Sunny)</li>
+          <li>White (Cloudy/Foggy)</li>
+          <li>Pink (Windy)</li>
+          <li>Blue (Rain/Snow)</li>
+        </ul>
+      </li>
+      <li>Wi-Fi module (built-in on ESP32)</li>
+    </ul>
+  </div>
+
+  <!-- 3. Power and Setup -->
+  <div class="section">
+    <h3>3. Power and Setup</h3>
+
+    <h4 style="margin-top:10px">3.1 Powering the Device</h4>
+    <p>Connect the lamp to a power supply. The device will boot automatically.</p>
+
+    <h4 style="margin-top:10px">3.2 Connecting to Wi-Fi</h4>
+    <p>On first boot:</p>
+    <ul>
+      <li>The OLED displays “WiFi connecting…”</li>
+      <li>If connection succeeds → “WiFi OK”</li>
+      <li>If it fails → “WiFi FAIL” (lamp still works offline but without weather updates)</li>
+    </ul>
+
+    <p>Wi-Fi credentials in firmware:</p>
+    <pre style="background:#0e1116;border:1px solid #2a3140;padding:12px;border-radius:8px;color:#cfe0ff;overflow-x:auto;">
+const char* WIFI_SSID = "Your WiFi name";
+const char* WIFI_PWD  = "Your WiFi Password";
+    </pre>
+  </div>
+
+  <!-- 4. Weather Indicator LEDs -->
+  <div class="section">
+    <h3>4. Weather Indicator LEDs</h3>
+    <p>The lamp fetches real-time weather via the Open-Meteo API every 30 seconds.</p>
+
+    <table>
+      <tr>
+        <th>Condition</th>
+        <th>WMO Code Range</th>
+        <th>LED Color</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td>Sunny</td>
+        <td>0</td>
+        <td>Yellow</td>
+        <td>Clear sky</td>
+      </tr>
+      <tr>
+        <td>Cloudy / Fog</td>
+        <td>1,2,3,45,48</td>
+        <td>White</td>
+        <td>Cloudy or foggy</td>
+      </tr>
+      <tr>
+        <td>Windy</td>
+        <td>Windspeed ≥ 30 km/h</td>
+        <td>Pink</td>
+        <td>Strong winds</td>
+      </tr>
+      <tr>
+        <td>Rain / Snow / Storm</td>
+        <td>51–99</td>
+        <td>Blue</td>
+        <td>Precipitation</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 5. Brightness Control -->
+  <div class="section">
+    <h3>5. Tilt-Based Brightness Control</h3>
+    <ul>
+      <li>Tilt right → brightness increases</li>
+      <li>Tilt left → brightness decreases</li>
+      <li>Tilt angle ≥ 15° triggers a brightness step</li>
+      <li>Total of 5 brightness levels</li>
+    </ul>
+    <p>The OLED displays the current brightness level (Lvl:0–5).</p>
+  </div>
+
+  <!-- 6. Pomodoro Timer -->
+  <div class="section">
+    <h3>6. Rotation-Based Pomodoro Timer</h3>
+
+    <h4 style="margin-top:10px">6.1 Entering Timer Setting Mode</h4>
+    <p>Rotate the lamp anticlockwise. OLED shows: <strong>SET xx min</strong></p>
+
+    <h4 style="margin-top:10px">6.2 Setting the Duration</h4>
+    <ul>
+      <li>360° rotation = 60 minutes</li>
+      <li>Every 30° = 5 minutes</li>
+      <li>Range: 0–60 minutes</li>
+    </ul>
+    <p>After 1.5 seconds of stillness, the value locks and the timer begins.</p>
+
+    <h4 style="margin-top:10px">6.3 Timer Running</h4>
+    <p>OLED shows <strong>TMR mm:ss</strong>.</p>
+    <p>At completion, the main LED flashes twice.</p>
+  </div>
+
+  <!-- 7. Shake to Reset -->
+  <div class="section">
+    <h3>7. Shake-to-Reset Gesture</h3>
+    <ul>
+      <li>Shake lamp vigorously</li>
+      <li>Sensor detects ≥0.5g acceleration or ≥180°/s rotation</li>
+      <li>After 3 hits → timer resets</li>
+    </ul>
+    <p>The main LED flashes twice when reset is triggered.</p>
+  </div>
+
+  <!-- 8. OLED Info Display -->
+  <div class="section">
+    <h3>8. OLED Information Display</h3>
+
+    <table>
+      <tr><th>Line</th><th>Content</th></tr>
+      <tr><td>1</td><td>City name</td></tr>
+      <tr><td>2</td><td>Current temperature</td></tr>
+      <tr><td>3</td><td>Next-hour forecast temperature</td></tr>
+      <tr><td>4</td><td>Humidity + brightness level</td></tr>
+      <tr><td>5</td><td>Pomodoro status (SET / TMR / Idle)</td></tr>
+    </table>
+
+    <p>Example display:</p>
+    <div class="imgbox">
+      <!-- Replace with your image:
+      <img src="assets/oled_example.jpg" alt="OLED example" 
+      style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+      -->
+      OLED example display placeholder
+    </div>
+  </div>
+
+  <!-- 9. Installation Tips -->
+  <div class="section">
+    <h3>9. Installation & Mounting Tips</h3>
+    <ul>
+      <li>Place on a flat surface for accurate tilt and rotation detection.</li>
+      <li>Avoid soft fabric surfaces.</li>
+      <li>Keep away from electromagnetic interference.</li>
+      <li>Ensure good Wi-Fi reception for weather updates.</li>
+    </ul>
+  </div>
+
+  <!-- 10. Troubleshooting -->
+  <div class="section">
+    <h3>10. Troubleshooting</h3>
+
+    <table>
+      <tr>
+        <th>Issue</th><th>Cause</th><th>Solution</th>
+      </tr>
+      <tr>
+        <td>Weather LEDs not lighting</td>
+        <td>No WiFi / API blocked</td>
+        <td>Check WiFi; reboot</td>
+      </tr>
+      <tr>
+        <td>Tilt control unresponsive</td>
+        <td>Lamp not upright</td>
+        <td>Place on stable surface & reset</td>
+      </tr>
+      <tr>
+        <td>Timer not starting</td>
+        <td>Movement too small</td>
+        <td>Rotate more quickly (&gt;20°/s)</td>
+      </tr>
+      <tr>
+        <td>Shake-reset not working</td>
+        <td>Motion too gentle</td>
+        <td>Shake more forcefully</td>
+      </tr>
+      <tr>
+        <td>OLED blank</td>
+        <td>Power drop</td>
+        <td>Reconnect USB</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 11. Safety Notes -->
+  <div class="section">
+    <h3>11. Safety Notes</h3>
+    <ul>
+      <li>Do not expose the device to moisture.</li>
+      <li>Handle gently; sensors can be damaged by impact.</li>
+    </ul>
+  </div>
+
+  <!-- 12. Version Information -->
+  <div class="section">
+    <h3>12. Version Information</h3>
+    <ul>
+      <li>Firmware version: v1.0 (ESP32)</li>
+      <li>Sensor integration: MPU6050 accelerometer + gyroscope</li>
+      <li>Weather source: Open-Meteo API</li>
+      <li>Display: SSD1306 OLED 128×64</li>
+    </ul>
+  </div>
+</section>
+
+
+
   </main>
 
   <footer>© <span id="yr"></span> ECSE 424 Group J • Calm Tech Lamp</footer>
