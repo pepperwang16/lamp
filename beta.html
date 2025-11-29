@@ -43,11 +43,685 @@
   </header>
 
   <main>
-    <h1>Beta System</h1>
     <section class="section">
-      <p>Coming soon.</p>
-    </section>
-  </main>
+  <h2>Design Evolution</h2>
+
+  <p>
+    Throughout the development cycle, the interactive lamp prototype underwent several significant revisions. These updates were driven by formative feedback, observations from informal user testing, and new usability insights that emerged during implementation. Below, I summarise the major design changes, describe the motivation behind each revision, and justify how each contributes to usability or feasibility improvements.
+  </p>
+
+  <div class="section" style="margin-top:12px">
+    <h3>1. Addition of Focus/Break Mode to System</h3>
+    <p><strong>What changed:</strong> A Break LED was added, and a physical button was introduced to toggle between Focus mode and Break mode, replacing the earlier single-LED design.</p>
+    <p><strong>Usability rationale:</strong> Introducing two dedicated LEDs creates a clear, low-cognitive-load mode indicator.
+ This helps users quickly determine whether they are in the focus segment or in a break, even without reading the OLED display.
+</p>
+  </div>
+
+  <div class="section" style="margin-top:12px">
+    <h3>2. Physical Button for Mode Switching + Timer Reset</h3>
+
+    <p><strong>What changed:</strong></p>
+    <p>A hardware button was added.</p>
+    <p>Pressing the button:</p>
+    <ul>
+      <li>Switches between Focus and Break mode</li>
+      <li>Automatically resets the Pomodoro timer</li>
+    </ul>
+
+    <p><strong>Usability rationale:</strong></p>
+    <p>
+      The button introduces an explicit, controllable, low-effort interaction.
+      It reduces accidental resets, eliminates ambiguity, and supports accessibility for users who
+      may not want to rely on motion-based input.
+    </p>
+
+    <p><strong>Feasibility rationale:</strong></p>
+    <p>
+      The ESP32 supports hardware interrupts and debouncing in software, so button integration
+      is highly feasible without significant hardware cost.
+    </p>
+  </div>
+
+  <div class="section" style="margin-top:12px">
+    <h3>3. OLED Display Evolution</h3>
+
+    <p><strong>What changed:</strong></p>
+    <p>The timer display on OLED was simplified:</p>
+    <ul>
+      <li>
+        Display now shows Focus/Break mode, temperature now, temperature next hour,
+        humidity, brightness, and TMR (mm:ss)
+      </li>
+    </ul>
+
+    <p><strong>Usability rationale:</strong></p>
+    <p>
+      This improves visual hierarchy and reduces cognitive load. Users locate the remaining time
+      faster, which is crucial during focus sessions.
+    </p>
+  </div>
+
+  <div class="section" style="margin-top:16px">
+    <h3>Beta Prototype Summary</h3>
+
+    <p>The current beta prototype now includes:</p>
+    <ul>
+      <li>Fully functioning Pomodoro system</li>
+      <li>Dual LED (Focus/Break) mode indication</li>
+      <li>Real-time weather classification</li>
+      <li>Motion-based brightness control</li>
+      <li>Reliable shake-to-reset gesture</li>
+      <li>A push-button for mode switching</li>
+      <li>Clean OLED UI displaying timer and weather</li>
+    </ul>
+
+    <p>
+      Together, these revisions produce a well-rounded prototype where all primary interactions
+      are functional, discoverable, and mapped to real behavioural contexts. The system supports
+      the course goal of enhancing humans, providing a supportive ambient interface for
+      productivity and well-being.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Testing Results and Analysis</h2>
+
+  <p>
+    The beta prototype builds directly on the alpha system and completes all major functionality
+    required for the final interactive lamp. While the alpha version already integrated physical
+    gestures, real-time weather, and timer logic, several core interactions were still incomplete,
+    ambiguous, or inconsistent during initial field tests. The beta prototype resolves these issues
+    through hardware additions, interface refinement, and robustness improvements. Below is a
+    detailed summary of the revisions made.
+  </p>
+
+  <!-- 1. Dual-LED mode indicator -->
+  <div class="section" style="margin-top:16px">
+    <h3>1. Addition of Dual-LED Mode Indicators (Focus + Break)</h3>
+
+    <p><strong>What was added:</strong></p>
+    <p>
+      The beta prototype introduces two dedicated LEDs—a main Focus LED and a Break LED—to
+      distinguish between Pomodoro phases.
+    </p>
+
+    <p><strong>Why this revision was needed:</strong></p>
+    <p>
+      In the alpha system, only the main LED existed, making it difficult for users to know which
+      phase they were in without reading the small OLED text.
+    </p>
+
+    <p><strong>How it improves usability:</strong></p>
+    <ul>
+      <li>Users can now identify the current mode instantly and peripherally.</li>
+      <li>Color-coded state feedback supports ambient awareness without cognitive effort.</li>
+      <li>This directly addresses visibility-of-system-status issues from the alpha.</li>
+    </ul>
+
+    <p><strong>Feasibility:</strong></p>
+    <p>
+      The ESP32 has sufficient GPIO pins; adding another LED created no significant software or wiring overhead.
+    </p>
+
+    <div class="section" style="margin-top:12px">
+      <h3>Focus Mode:</h3>
+      <div class="imgbox">
+        <img src="assets/beta_focus.png" alt="focus example" 
+      style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+      </div>
+    </div>
+
+    <div class="section" style="margin-top:12px">
+      <h3>Break Mode:</h3>
+      <div class="imgbox">
+        <img src="assets/beta_break.png" alt="break example" 
+      style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Physical button for mode switching + timer reset -->
+  <div class="section" style="margin-top:16px">
+    <h3>2. Hardware Button Added for Mode Switching and Timer Reset</h3>
+
+    <p><strong>What changed:</strong></p>
+    <p>
+      A tactile push-button was added to support:
+    </p>
+    <ul>
+      <li>Switching between Focus and Break phases manually</li>
+      <li>Resetting timer on demand (Without shaking or rotating the lamp)</li>
+    </ul>
+
+    <p><strong>Why this revision was needed:</strong></p>
+    <p>
+      In the alpha system, shake-to-reset and rotation gestures existed, but there was no reliable or direct way to change modes. This caused confusion for test users who wanted immediate control during demonstrations.
+    </p>
+
+    <p><strong>Usability improvements:</strong></p>
+    <ul>
+      <li>Provides explicit, predictable control</li>
+      <li>Reduces mode-switch errors</li>
+      <li>Improves accessibility for users who prefer tactile input</li>
+    </ul>
+
+    <p><strong>Feasibility:</strong></p>
+    <p>
+      The interrupt-driven button logic and debouncing were implemented in software without hardware redesign.
+    </p>
+
+    </div>
+  </div>
+
+  <!-- 3. Cleaner OLED interface -->
+  <div class="section" style="margin-top:16px">
+    <h3>3. Expanded and Cleaner OLED Interface</h3>
+
+    <p><strong>What changed:</strong></p>
+    <p>
+       The OLED display now shows:
+    </p>
+    <ul>
+      <li>Location (city)</li>
+      <li>Current temperature</li>
+      <li>Next-hour temperature forecast</li>
+      <li>Humidity</li>
+      <li>Brightness level (Lvl 0–5)</li>
+      <li>Current mode (Focus/Break)</li>
+      <li>Timer (mm:ss)</li>
+    </ul>
+
+    <p><strong>Usability benefits:</strong></p>
+    <ul>
+      <li>Prioritizes mode + temperature + timer, reducing cognitive load</li>
+      <li>Improves scan-ability for remaining time during deep work</li>
+      <li>Consistent spacing and formatting aligns with physical timer expectations</li>
+      <li>Better supports learnability</li>
+    </ul>
+
+    <div class="imgbox" style="margin-top:10px">
+      <img src="assets/beta_oled.png" alt="oled example" 
+      style="max-width:100%;height:auto;border-radius:12px;border:1px solid #2c3546;">
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Weather classification + LED mapping -->
+  <div class="section" style="margin-top:16px">
+    <h3>4. Complete Implementation of Weather Classification + LEDs</h3>
+
+    <p><strong>What changed:</strong></p>
+    <p>
+      All weather categories (Sunny, Cloudy, Windy, Rain/Snow) now update automatically every 30 seconds using real-time data.
+    </p>
+    <p><strong>Why this revision was needed:</strong></p>
+    <p>
+      The alpha prototype fetched weather but occasionally displayed outdated results or failed to map certain codes.
+    </p>
+
+    <p><strong>Usability improvements:</strong></p>
+    <ul>
+      <li>Reliable ambient feedback even under rapid weather changes</li>
+      <li>Eliminates outdated light cues</li>
+      <li>LED colors match manual documentation exactly</li>
+    </ul>
+
+    <p><strong>Feasibility:</strong></p>
+    <p>
+      Improved code-range mapping was achieved solely by software updates; no additional hardware pins were required.
+    </p>
+  </div>
+
+  <!-- 5. Tilt brightness stability thresholds -->
+  <div class="section" style="margin-top:16px">
+    <h3>5. Brightness Control Now Fully Synced With Gesture Detection</h3>
+
+    <p><strong>What changed:</strong></p>
+    <p>
+      The tilt-based brightness control is more stable and has five clear levels (Lvl 0–5), shown on the OLED.
+    </p>
+
+    <p><strong>Problems observed in alpha:</strong></p>
+    <ul>
+      <li>Uneven sensitivity</li>
+      <li>Accidental small tilts caused unwanted changes</li>
+    </ul>
+
+    <p><strong>Fixes in beta:</strong></p>
+    <ul>
+      <li>Added tilt thresholds</li>
+      <li>Added stability checks and update gating</li>
+    </ul>
+
+    <p><strong>Usability benefits:</strong></p>
+    <ul>
+      <li>Predictable gesture interaction</li>
+      <li>Matches user’s intuitive expectations from lo-fi tests</li>
+    </ul>
+
+  </div>
+
+  <!-- 6. Robust rotation timer UI and lock -->
+  <div class="section" style="margin-top:16px">
+    <h3>6. More Robust Rotation-Based Timer (Kitchen-Timer Interaction)</h3>
+
+    <p><strong>What changed:</strong></p>
+    <p>
+      The rotation-timer system now:
+    </p>
+    <ul>
+      <li>Locks after 1.5 seconds of stillness</li>
+      <li>Prevents false positives</li>
+      <li>Displays “SET xx min” clearly before switching to running mode</li>
+    </ul>
+
+    <p><strong>Why this revision was needed:</strong></p>
+    <p>
+      In the alpha prototype, small accidental wrist movements sometimes restarted the timer.
+    </p>
+
+    <p><strong>Usability improvements:</strong></p>
+    <ul>
+      <li>Timer interaction is now reliable</li>
+      <li>Behaves similarly to real physical timers</li>
+      <li>Supports learnability and reduces task error rate</li>
+    </ul>
+
+  </div>
+
+  <!-- 7. Improved shake reset -->
+  <div class="section" style="margin-top:16px">
+    <h3>7. Improved Shake-to-Reset Gesture</h3>
+
+    <p><strong>What changed:</strong></p>
+    <ul>
+      <li>Adjusted acceleration threshold</li>
+      <li>Added a cooldown</li>
+      <li>Added double-flash LED confirmation</li>
+      <li>Required 3 consistent hits</li>
+    </ul>
+
+    <p><strong>Why:</strong></p>
+    <p>
+      The alpha system’s reset gesture was too sensitive and sometimes triggered unintentionally.
+    </p>
+
+    <p><strong>Usability benefits:</strong></p>
+    <ul>
+      <li>Provides a forgiving interaction</li>
+      <li>Avoids accidental timer cancellations</li>
+      <li>multimodal confirmation (LED flash + OLED reset)</li>
+    </ul>
+
+  </div>
+
+  <!-- 8. System stability -->
+  <div class="section" style="margin-top:16px">
+    <h3>8. System Integration and Stability Improvements</h3>
+
+    <p><strong>What changed:</strong></p>
+    <ul>
+      <li>Wi-Fi reconnection logic added</li>
+      <li>Weather API failure fallbacks added</li>
+      <li>OLED flicker eliminated</li>
+      <li>All interactions tested together for concurrency conflicts</li>
+    </ul>
+
+    <p><strong>Why:</strong></p>
+    <p>
+     During alpha testing, simultaneous gestures (tilt + rotation) sometimes produced conflicts.
+    </p>
+
+    <p><strong>Feasibility:</strong></p>
+    <p>These are software-side improvements that required no hardware changes.</p>
+  </div>
+
+  <!-- 9. Final summary -->
+  <div class="section" style="margin-top:20px">
+    <h3>Final Summary: How the Beta Prototype Meets Course Objectives</h3>
+
+    <p>
+      The beta prototype is now fully functional, implementing all intended interactions clearly and consistently:
+    </p>
+    <ul>
+      <li>Pomodoro functionality (Focus/Break + timer)</li>
+      <li>Dual-mode LEDs for ambient awareness</li>
+      <li>Real-time weather interpretation through colored LEDs</li>
+      <li>Physical motion interactions (tilt → brightness, rotation → timer)</li>
+      <li>Shake-to-reset error recovery</li>
+      <li>Physical button for direct switching</li>
+      <li>OLED UI that is readable, structured, and informative</li>
+    </ul>
+
+    <p>These revisions collectively transform the system from a partially working alpha into a complete, reliable, human-centered beta prototype. The interactions are intuitive, low-cognitive-load, and align with the goal of “enhancing users as humans” by providing subtle ambient information and supportive productivity cues.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>User Manual — Beta System</h2>
+
+  <!-- Download code button -->
+  <div class="section" style="margin-top:8px">
+    <a href="https://drive.google.com/file/d/1rqA_eXC958VAbiOOzvxKZ2A0gPsaTMZz/view?usp=drive_link"
+       target="_blank"
+       style="display:inline-block;text-decoration:none;background:var(--accent);color:#0b0d10;
+              font-weight:700;padding:10px 18px;border-radius:12px;box-shadow:0 4px 14px rgba(124,196,255,.3);">
+      ▶ Download Beta Lamp Code
+    </a>
+  </div>
+
+  <!-- 1. Introduction -->
+  <div class="section" style="margin-top:12px">
+    <h3>1. Introduction</h3>
+    <p>
+      The interactive lamp combines ambient lighting, real-time weather awareness, and a Pomodoro-style focus timer into a single intuitive physical device. The beta version introduces a dual-LED mode indicator, a physical mode-switch button, and improved gesture detection for brightness, timer control, and reset actions.
+    </p>
+    <p>
+      This guide will help you set up, operate, and understand all features of the lamp independently.
+    </p>
+  </div>
+
+  <!-- 2. What’s Included -->
+  <div class="section">
+    <h3>2. What’s Included</h3>
+    <ul>
+      <li>ESP32 microcontroller</li>
+      <li>MPU6050 motion sensor</li>
+      <li>SSD1306 OLED display</li>
+      <li>Main LED (focus light)</li>
+      <li>Break LED</li>
+      <li>Four weather indicator LEDs</li>
+      <li>Push button for mode switching</li>
+      <li>USB power cable</li>
+    </ul>
+  </div>
+
+  <!-- 3. Power & Setup -->
+  <div class="section">
+    <h3>3. Power &amp; Setup</h3>
+
+    <h4 style="margin-top:10px">3.1 Powering the Device</h4>
+    <p>Connect the lamp to any USB power source (5V). It will start automatically.</p>
+
+    <h4 style="margin-top:10px">3.2 Wi-Fi Connection</h4>
+    <p>The lamp connects to Wi-Fi on startup to fetch weather data.</p>
+    <p>OLED shows:</p>
+    <pre style="background:#0e1116;border:1px solid #2a3140;padding:12px;border-radius:8px;color:#cfe0ff;">
+“WiFi connecting…”
+“WiFi OK” when successful
+“WiFi FAIL” if it cannot connect (offline mode still works)
+    </pre>
+    <p>To change Wi-Fi: edit the firmware (SSID + password) and re-upload.</p>
+  </div>
+
+  <!-- 4. Weather Indicator LEDs -->
+  <div class="section">
+    <h3>4. Weather Indicator LEDs</h3>
+    <p>Weather is updated every 30 seconds using the Open-Meteo API.</p>
+
+    <table>
+      <tr>
+        <th>Condition</th>
+        <th>LED Colour</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td>Sunny</td>
+        <td>Yellow</td>
+        <td>Clear sky</td>
+      </tr>
+      <tr>
+        <td>Cloudy / Fog</td>
+        <td>White</td>
+        <td>Overcast or foggy</td>
+      </tr>
+      <tr>
+        <td>Windy</td>
+        <td>Pink</td>
+        <td>High wind speeds</td>
+      </tr>
+      <tr>
+        <td>Rain / Snow</td>
+        <td>Blue</td>
+        <td>Precipitation</td>
+      </tr>
+    </table>
+
+    <p>These lights work in the background and require no user input.</p>
+  </div>
+
+  <!-- 5. Brightness Control (Tilt Gesture) -->
+  <div class="section">
+    <h3>5. Brightness Control (Tilt Gesture)</h3>
+    <p>Tilt the lamp left or right:</p>
+    <ul>
+      <li>Tilt right → increase brightness</li>
+      <li>Tilt left → decrease brightness</li>
+    </ul>
+    <p>Threshold: 15° tilt required</p>
+    <p>Brightness levels: 0–5</p>
+    <p>The OLED shows:</p>
+    <pre style="background:#0e1116;border:1px solid #2a3140;padding:12px;border-radius:8px;color:#cfe0ff;">
+Lvl:X
+    </pre>
+  </div>
+
+  <!-- 6. Focus/Break Modes and the Timer -->
+  <div class="section">
+    <h3>6. Focus/Break Modes and the Timer</h3>
+
+    <h4 style="margin-top:10px">6.1 Switching Modes</h4>
+    <p>Press the physical button:</p>
+    <ul>
+      <li>Toggles between FOCUS mode and BREAK mode</li>
+      <li>Automatically resets the timer</li>
+    </ul>
+    <p>Focus LED = ON during focus</p>
+    <p>Break LED = ON during break</p>
+
+    <h4 style="margin-top:10px">6.2 Rotation-Based Timer Setting</h4>
+    <p>Rotate the lamp (like a dial):</p>
+    <ul>
+      <li>360° rotation = 60 minutes</li>
+      <li>Every 30° = 5 minutes</li>
+    </ul>
+    <p>OLED shows:</p>
+    <pre style="background:#0e1116;border:1px solid #2a3140;padding:12px;border-radius:8px;color:#cfe0ff;">
+SET xx min
+    </pre>
+    <p>After 1.5 seconds of stillness, the value locks and the timer starts.</p>
+
+    <h4 style="margin-top:10px">6.3 Timer Running</h4>
+    <p>OLED shows:</p>
+    <pre style="background:#0e1116;border:1px solid #2a3140;padding:12px;border-radius:8px;color:#cfe0ff;">
+TMR mm:ss
+    </pre>
+    <p>When timer reaches zero:</p>
+    <ul>
+      <li>The main LED flashes twice</li>
+      <li>Timer resets</li>
+    </ul>
+  </div>
+
+  <!-- 7. Shake-to-Reset -->
+  <div class="section">
+    <h3>7. Shake-to-Reset</h3>
+    <p>Shake the lamp firmly:</p>
+    <ul>
+      <li>After 3 hits, the timer cancels</li>
+      <li>Main LED flashes twice</li>
+      <li>Device returns to idle</li>
+    </ul>
+    <p>Cooldown: 1.2 seconds to prevent accidental resets.</p>
+  </div>
+
+  <!-- 8. OLED Display Overview -->
+  <div class="section">
+    <h3>8. OLED Display Overview</h3>
+    <p>The OLED shows:</p>
+    <pre style="background:#0e1116;border:1px solid #2a3140;padding:12px;border-radius:8px;color:#cfe0ff;">
+Location
+Current temperature
+Next-hour temperature
+Humidity &amp; brightness
+Mode and timer value
+    </pre>
+    <p>This provides a concise summary of environmental and timer information.</p>
+  </div>
+
+  <!-- 9. Mounting Tips -->
+  <div class="section">
+    <h3>9. Mounting Tips</h3>
+    <ul>
+      <li>Place on a flat, stable surface</li>
+      <li>Avoid fabric or soft surfaces</li>
+      <li>Keep away from strong electromagnetic sources</li>
+      <li>Ensure the room has adequate Wi-Fi</li>
+    </ul>
+  </div>
+
+  <!-- 10. Troubleshooting -->
+  <div class="section">
+    <h3>10. Troubleshooting</h3>
+
+    <table>
+      <tr>
+        <th>Issue</th>
+        <th>Cause</th>
+        <th>Solution</th>
+      </tr>
+      <tr>
+        <td>Weather LEDs not lit</td>
+        <td>WiFi unavailable</td>
+        <td>Check network / reboot</td>
+      </tr>
+      <tr>
+        <td>Tilt unresponsive</td>
+        <td>Lamp not upright</td>
+        <td>Place on stable surface</td>
+      </tr>
+      <tr>
+        <td>Timer not starting</td>
+        <td>Rotation too small</td>
+        <td>Rotate more than 20°/s</td>
+      </tr>
+      <tr>
+        <td>Shake reset not working</td>
+        <td>Motion too gentle</td>
+        <td>Shake more firmly</td>
+      </tr>
+      <tr>
+        <td>OLED blank</td>
+        <td>Power drop</td>
+        <td>Reconnect USB</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 11. Safety -->
+  <div class="section">
+    <h3>11. Safety</h3>
+    <ul>
+      <li>Do not expose to moisture</li>
+      <li>Avoid dropping the lamp</li>
+      <li>Handle electronics carefully</li>
+    </ul>
+  </div>
+
+  <!-- Side-by-Side Comparison Table (Alpha vs. Beta) -->
+  <div class="section">
+    <h3>Side-by-Side Comparison Table (Alpha vs. Beta)</h3>
+    <p>This can go in an appendix or development section.</p>
+
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>Alpha Prototype</th>
+        <th>Beta Prototype</th>
+        <th>Improvement</th>
+      </tr>
+      <tr>
+        <td>Mode indication</td>
+        <td>Only main LED</td>
+        <td>Main + Break LED</td>
+        <td>Clearer state visibility</td>
+      </tr>
+      <tr>
+        <td>Timer control</td>
+        <td>Rotation-based, unstable</td>
+        <td>Stabilized rotation + lock delay</td>
+        <td>Reliable timer setting</td>
+      </tr>
+      <tr>
+        <td>Reset mechanism</td>
+        <td>Shake-to-reset only</td>
+        <td>Shake reset + physical button</td>
+        <td>Better user control</td>
+      </tr>
+      <tr>
+        <td>Mode switching</td>
+        <td>Not implemented</td>
+        <td>Physical button</td>
+        <td>Direct mode management</td>
+      </tr>
+      <tr>
+        <td>Weather system</td>
+        <td>Basic mapping</td>
+        <td>Complete WMO mapping + LED categories</td>
+        <td>Accurate weather states</td>
+      </tr>
+      <tr>
+        <td>Brightness control</td>
+        <td>Overly sensitive tilt</td>
+        <td>Thresholded 15° tilt</td>
+        <td>Predictable interaction</td>
+      </tr>
+      <tr>
+        <td>OLED UI</td>
+        <td>Raw data only</td>
+        <td>Structured, clean layout</td>
+        <td>Lower cognitive load</td>
+      </tr>
+      <tr>
+        <td>Gesture robustness</td>
+        <td>Frequent false triggers</td>
+        <td>Thresholds + cooldown</td>
+        <td>Error prevention</td>
+      </tr>
+      <tr>
+        <td>Usability goals</td>
+        <td>Based on early feedback</td>
+        <td>Fully aligned with scenario</td>
+        <td>Final system coherence</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Project Reflection</h2>
+  <p>
+    Over the course of the semester, our project evolved from a simple idea about reducing distraction into an integrated physical system that blends ambient information, physical interaction, and personal productivity. Initially, our problem scenario focused on helping students maintain focus during study sessions, particularly in shared living spaces where distractions are common. Through iterative design and testing, this scenario expanded as we identified that users not only needed help staying focused, but also needed low-cognitive-load cues, a gentle break structure, and ambient awareness of their environment without checking their phones.
+  </p>
+
+  <p>
+    Our usability goals matured alongside the prototype. Early in the project, our goals centered on ease of use, visibility of system status, and minimizing interruptions during focus sessions. However, after formative testing, we added new goals: predictability of gestures, mode clarity, and multi-modal feedback to support users who rely on visual, tactile, or ambient cues differently. These expanded goals directly shaped the evolution from a GUI-heavy digital concept to a sensor-driven physical device.
+  </p>
+
+  <p>
+    The beta prototype successfully reflects these usability goals in concrete functionality. The addition of dual LEDs for Focus and Break modes fulfills the goal of immediate state visibility. The refinement of tilt-based brightness and rotation-based timer gestures meets the goal of intuitive, physical interaction. Meanwhile, weather LEDs and real-time environmental information extend the context of use beyond study sessions, grounding the lamp as part of the user’s daily routine. The physical button and shake-to-reset gesture reinforce user control and error recovery, supporting our desire to minimize frustration.
+  </p>
+
+  <p>
+    In its final form, the beta prototype meaningfully enhances the user experience in the context of our scenario: it supports focused work without requiring phone checks, provides effortless environmental awareness, and uses familiar physical actions to encourage natural engagement. Through iterative refinement driven by real feedback, the system has become not just a tool, but a companion that supports well-being, productivity, and comfort.
+  </p>
+</section>
+
+
+</main>
 
   <footer>© <span id="yr"></span> ECSE 424 Group J • Calm Tech Lamp</footer>
 </div>
